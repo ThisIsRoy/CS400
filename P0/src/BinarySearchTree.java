@@ -5,6 +5,9 @@ public class BinarySearchTree<T extends Comparable <T>> {
         this.root = null;
     }
 
+    // *********************************
+    // --- TREE OPERATION FUNCTIONS ---
+    // *********************************
     public void insert (T element) {
         this.root = this.insert(this.root, element);
     }
@@ -16,10 +19,34 @@ public class BinarySearchTree<T extends Comparable <T>> {
             current.setLeft(insert(current.getLeft(), element));
         } else if (element.compareTo(current.getData()) > 0) {
             current.setRight(insert(current.getRight(), element));
+        } else {
+            System.out.println("Element " + element + " already exists in the tree!");
         }
         return current;
     }
 
+    public boolean contains(T element) {
+        return contains(this.root, element);
+    }
+
+    private boolean contains(BSTNode<T> current, T element) {
+        if (current == null) {
+            return false;
+        } else if (current.getData() == element) {
+            return true;
+        } else if (element.compareTo(current.getData()) < 0) {
+            return contains(current.getLeft(), element);
+        } else if (element.compareTo(current.getData()) > 0) {
+            return contains(current.getRight(), element);
+        }
+
+        System.out.println("Error in contain at element " + current.getData()); // catch error
+        return false;
+    }
+
+    // *******************************
+    // --- TREE PRINTING FUNCTIONS ---
+    // *******************************
     public void printSideways() {
         System.out.println("------------------------------------------");
         printSideways(root, "");
@@ -35,6 +62,9 @@ public class BinarySearchTree<T extends Comparable <T>> {
         }
     }
 
+    // ********************************
+    // --- TREE TRAVERSAL FUNCTIONS ---
+    // ********************************
     public void postOrderTraversal() {
         postOrderTraversal(this.root);
     }

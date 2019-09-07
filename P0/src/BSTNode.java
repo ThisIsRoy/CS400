@@ -48,6 +48,34 @@ public class BSTNode<T extends Comparable<T>> {
         }
     }
 
+    public int getSize() {
+        // base case leaf node
+        if (this.getLeft() == null & this.getRight() == null) {
+            return 1;
+
+            // recursive case
+        } else if (this.getLeft() == null) {
+            return 1 + this.getRight().getSize();
+        } else if (this.getRight() == null) {
+            return 1 + this.getLeft().getSize();
+        } else {
+            return 1 + this.getLeft().getSize() + this.getRight().getSize();
+        }
+    }
+
+    public int numOfChildren() {
+        int numOfChildren = 0;
+
+        if (getLeft() != null) {
+            numOfChildren ++;
+        }
+        if (getRight() != null) {
+            numOfChildren ++;
+        }
+
+        return numOfChildren;
+    }
+
 // add a main method to test the code
     public static void main(String[] args) {
         BSTNode<String> node1 = new BSTNode<>("R");
