@@ -13,20 +13,84 @@ public class BSTTree<T extends Comparable<T>> implements BinarySearchTreeADT<T> 
     }
 
     private BSTNode<T> insert(BSTNode<T> current, T element) {
+        // insert node once we reach end of tree
         if (current == null) {
             current = new BSTNode<T>(element);
+            System.out.println("Node " + element + " added successfully!");
+
+            // continue to look for end of tree via recursion
         } else if (element.compareTo(current.getData()) < 0 ) {
             current.setLeft(insert(current.getLeft(), element));
         } else if (element.compareTo(current.getData()) > 0) {
             current.setRight(insert(current.getRight(), element));
+
+            // catch error
         } else {
             System.out.println("Element " + element + " already exists in the tree!");
         }
+
         return current;
     }
 
     public void remove(T element) {
+        if (root != null) {
+            // root node is element to remove
+            if (root.getData() == element) {
+                remove(null, root, 0);
+                System.out.println("Node " + element + " removed successfully!");
 
+                // start recursion helper function to look for node
+            } else {
+               findNode(element, null, root, 0);
+            }
+        }
+    }
+
+    private void findNode(T element, BSTNode<T> parent, BSTNode<T> current, int parentDirection) {
+        if (current != null) {
+            // found node to remove
+            if (current.getData() == element) {
+                remove(parent, current, parentDirection);
+
+                // keep looking recursively
+            } else {
+                findNode(element, current, current.getLeft(), 1);
+                findNode(element, current, current.getRight(), 2);
+            }
+        }
+    }
+
+    // parent direction: 0 no parent, 1 node is parent's left child, 2 node is parent's right child
+    private void remove(BSTNode<T> parent, BSTNode<T> current, int parentDirection) {
+        int numOfChildren = current.numOfChildren();
+
+        if (numOfChildren == 0) {
+            // no child, simply remove node
+            if (parent == null) {
+                root = null;
+            } else if (parentDirection == 1) {
+                parent.setLeft(null);
+            } else if (parentDirection == 2) {
+                parent.setRight(null);
+            }
+
+            // one child, attach child to parent
+        } else if (numOfChildren == 1) {
+            BSTNode<T> child = current.getChildren().get(0);
+            if (parent == null) {
+                root = child;
+            } else {
+                if (parentDirection == 1) {
+                    parent.setLeft(child);
+                } else if (parentDirection == 2) {
+                    parent.setRight(child);
+                }
+            }
+
+            // two children, find next largest of right subtree to replace
+        } else if (numOfChildren == 2) {
+
+        }
     }
 
     public boolean contains(T element) {
@@ -34,10 +98,15 @@ public class BSTTree<T extends Comparable<T>> implements BinarySearchTreeADT<T> 
     }
 
     private boolean contains(BSTNode<T> current, T element) {
+        // return false if we reach end of tree
         if (current == null) {
             return false;
+
+            // return true if we find node
         } else if (current.getData() == element) {
             return true;
+
+            // continue searching via recursion
         } else if (element.compareTo(current.getData()) < 0) {
             return contains(current.getLeft(), element);
         } else if (element.compareTo(current.getData()) > 0) {
@@ -126,7 +195,17 @@ public class BSTTree<T extends Comparable<T>> implements BinarySearchTreeADT<T> 
     }
 
     public static void main(String[] args) {
-        BinarySearchTree<Integer> tree = new BinarySearchTree<Integer>();
+        BSTTree<Integer> tree = new BSTTree<Integer>();
+        tree.insert(5);
+        tree.insert(7);
+        tree.insert(10);
+        tree.insert(4);
+
+        tree.printSideways();
+
+        tree.remove(7);
+
+        tree.printSideways();
     }
 
 

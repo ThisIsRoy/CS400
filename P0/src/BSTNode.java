@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.ArrayList;
+
 public class BSTNode<T extends Comparable<T>> {
 
     private T data;
@@ -74,6 +77,18 @@ public class BSTNode<T extends Comparable<T>> {
         }
 
         return numOfChildren;
+    }
+
+    public List<BSTNode<T>> getChildren() {
+        List<BSTNode<T>> children = new ArrayList<BSTNode<T>>();
+        if (getLeft() != null) {
+            children.add(getLeft());
+        }
+        if (getRight() != null) {
+            children.add(getRight());
+        }
+
+        return children;
     }
 
 // add a main method to test the code
