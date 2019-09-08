@@ -60,36 +60,62 @@ public class BSTTree<T extends Comparable<T>> implements BinarySearchTreeADT<T> 
         }
     }
 
+    private BSTNode<T> findNextSmallestNodeParent(BSTNode<T> parent, BSTNode<T> current) {
+        // found smallest node
+        if (current.getLeft() == null) {
+            return parent;
+
+            // recursively loop through left subtree
+        } else {
+            return findNextSmallestNodeParent(current, current.getLeft());
+        }
+    }
+
+    // current, replaceNodeParent is only used when 2 children
+    private void replaceNode(BSTNode<T> parent, BSTNode<T> replaceNode, int parentDirection, int numOfChildren, BSTNode<T> replaceNodeParent, BSTNode<T> current) {
+        // attaches children from old node to replacement node if old node had two children
+        if (numOfChildren == 2) {
+            int replaceDirection = replaceNodeParent.getData() == root.getData() ? 2 : 1;
+            System.out.println("Current is " + current.getRight().getData());
+
+            // removes replacement node from its original position
+            replaceNode(replaceNodeParent, replaceNode.getRight(), replaceDirection, replaceNode.numOfChildren(), null, null);
+            replaceNode.setLeft(current.getLeft());
+            replaceNode.setRight(current.getRight());
+        }
+
+        // add replacement node to its new position
+        if (parent == null) {
+            root = replaceNode;
+        } else if (parentDirection == 1) {
+            parent.setLeft(replaceNode);
+        } else if (parentDirection == 2) {
+            parent.setRight(replaceNode);
+        }
+
+
+    }
+
     // parent direction: 0 no parent, 1 node is parent's left child, 2 node is parent's right child
     private void remove(BSTNode<T> parent, BSTNode<T> current, int parentDirection) {
         int numOfChildren = current.numOfChildren();
 
         if (numOfChildren == 0) {
             // no child, simply remove node
-            if (parent == null) {
-                root = null;
-            } else if (parentDirection == 1) {
-                parent.setLeft(null);
-            } else if (parentDirection == 2) {
-                parent.setRight(null);
-            }
+            replaceNode(parent,null, parentDirection, numOfChildren, null, null);
+
 
             // one child, attach child to parent
         } else if (numOfChildren == 1) {
             BSTNode<T> child = current.getChildren().get(0);
-            if (parent == null) {
-                root = child;
-            } else {
-                if (parentDirection == 1) {
-                    parent.setLeft(child);
-                } else if (parentDirection == 2) {
-                    parent.setRight(child);
-                }
-            }
+            replaceNode(parent, child, parentDirection, numOfChildren, null, null);
+
 
             // two children, find next largest of right subtree to replace
         } else if (numOfChildren == 2) {
-
+            BSTNode<T> replaceNodeParent = findNextSmallestNodeParent(current, current.getRight());
+            BSTNode<T> replaceNode = replaceNodeParent.getData() == root.getData() ? replaceNodeParent.getRight() : replaceNodeParent.getLeft();
+            replaceNode(parent, replaceNode, parentDirection, numOfChildren, replaceNodeParent, current);
         }
     }
 
@@ -200,12 +226,14 @@ public class BSTTree<T extends Comparable<T>> implements BinarySearchTreeADT<T> 
         tree.insert(7);
         tree.insert(10);
         tree.insert(4);
+        tree.insert(6);
 
         tree.printSideways();
 
         tree.remove(7);
 
         tree.printSideways();
+        // System.out.println(tree.preOrderTraversal());
     }
 
 
