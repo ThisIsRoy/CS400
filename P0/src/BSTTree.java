@@ -71,26 +71,26 @@ public class BSTTree<T extends Comparable<T>> implements BinarySearchTreeADT<T> 
         }
     }
 
-    // current, replaceNodeParent is only used when 2 children
-    private void replaceNode(BSTNode<T> parent, BSTNode<T> replaceNode, int parentDirection, int numOfChildren, BSTNode<T> replaceNodeParent, BSTNode<T> current) {
+    // current, replacementNodeParent is only used when 2 children
+    private void replaceNode(BSTNode<T> parent, BSTNode<T> replacementNode, int parentDirection, int numOfChildren, BSTNode<T> replacementNodeParent, BSTNode<T> current) {
         // attaches children from old node to replacement node if old node had two children
         if (numOfChildren == 2) {
-            int replaceDirection = replaceNodeParent.getData() == root.getData() ? 2 : 1;
+            int replaceDirection = replacementNodeParent.getData() == root.getData() ? 2 : 1;
             System.out.println("Current is " + current.getRight().getData());
 
             // removes replacement node from its original position
-            replaceNode(replaceNodeParent, replaceNode.getRight(), replaceDirection, replaceNode.numOfChildren(), null, null);
-            replaceNode.setLeft(current.getLeft());
-            replaceNode.setRight(current.getRight());
+            replaceNode(replacementNodeParent, replacementNode.getRight(), replaceDirection, replacementNode.numOfChildren(), null, null);
+            replacementNode.setLeft(current.getLeft());
+            replacementNode.setRight(current.getRight());
         }
 
         // add replacement node to its new position
         if (parent == null) {
-            root = replaceNode;
+            root = replacementNode;
         } else if (parentDirection == 1) {
-            parent.setLeft(replaceNode);
+            parent.setLeft(replacementNode);
         } else if (parentDirection == 2) {
-            parent.setRight(replaceNode);
+            parent.setRight(replacementNode);
         }
 
 

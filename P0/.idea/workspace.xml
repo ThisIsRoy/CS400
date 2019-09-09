@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a2bed9a5-7a2d-487f-9849-f02f37540aa8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BSTNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BSTNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BSTTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BSTTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TreeSimulations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TreeSimulations.java" afterDir="false" />
     </list>
@@ -36,16 +35,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BSTTree.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BSTTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BSTTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-571">
-              <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+            <state relative-caret-position="221">
+              <caret line="74" column="101" lean-forward="true" selection-start-line="74" selection-start-column="101" selection-end-line="74" selection-end-column="101" />
               <folding>
-                <element signature="e#3446#3447#0" expanded="true" />
-                <element signature="e#3497#3498#0" expanded="true" />
-                <element signature="e#5370#5371#0" expanded="true" />
-                <element signature="e#5415#5416#0" expanded="true" />
+                <element signature="e#4792#4793#0" expanded="true" />
+                <element signature="e#4843#4844#0" expanded="true" />
+                <element signature="e#6716#6717#0" expanded="true" />
+                <element signature="e#6761#6762#0" expanded="true" />
                 <element signature="e#6556#6565#0" expanded="true" />
               </folding>
             </state>
@@ -65,9 +64,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TreeSimulations.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TreeSimulations.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TreeSimulations.java">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1598">
+              <caret line="94" lean-forward="true" selection-start-line="52" selection-start-column="4" selection-end-line="94" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -94,8 +100,8 @@
         <option value="$PROJECT_DIR$/src/BinarySearchTreeADT.java" />
         <option value="$PROJECT_DIR$/src/BinarySearchTree.java" />
         <option value="$PROJECT_DIR$/src/BSTNode.java" />
-        <option value="$PROJECT_DIR$/src/TreeSimulations.java" />
         <option value="$PROJECT_DIR$/src/BSTTree.java" />
+        <option value="$PROJECT_DIR$/src/TreeSimulations.java" />
       </list>
     </option>
   </component>
@@ -220,7 +226,21 @@
       <option name="project" value="LOCAL" />
       <updated>1567896218291</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added more tree operations to bst tree">
+      <created>1567899268811</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1567899268811</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added removal for two children">
+      <created>1567966587180</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1567966587180</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -236,11 +256,11 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32941177" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -260,7 +280,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added tree operations to bst tree" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tree operations to bst tree" />
+    <MESSAGE value="added more tree operations to bst tree" />
+    <MESSAGE value="added removal for two children" />
+    <option name="LAST_COMMIT_MESSAGE" value="added removal for two children" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/BinarySearchTree.java">
@@ -289,6 +311,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="24" selection-start-column="24" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -308,10 +333,10 @@
         <state relative-caret-position="153">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
-            <element signature="e#3446#3447#0" expanded="true" />
-            <element signature="e#3497#3498#0" expanded="true" />
-            <element signature="e#5370#5371#0" expanded="true" />
-            <element signature="e#5415#5416#0" expanded="true" />
+            <element signature="e#4792#4793#0" expanded="true" />
+            <element signature="e#4843#4844#0" expanded="true" />
+            <element signature="e#6716#6717#0" expanded="true" />
+            <element signature="e#6761#6762#0" expanded="true" />
             <element signature="e#6556#6565#0" expanded="true" />
           </folding>
         </state>
@@ -350,10 +375,10 @@
         <state relative-caret-position="153">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
-            <element signature="e#3446#3447#0" expanded="true" />
-            <element signature="e#3497#3498#0" expanded="true" />
-            <element signature="e#5370#5371#0" expanded="true" />
-            <element signature="e#5415#5416#0" expanded="true" />
+            <element signature="e#4792#4793#0" expanded="true" />
+            <element signature="e#4843#4844#0" expanded="true" />
+            <element signature="e#6716#6717#0" expanded="true" />
+            <element signature="e#6761#6762#0" expanded="true" />
             <element signature="e#6556#6565#0" expanded="true" />
           </folding>
         </state>
@@ -381,16 +406,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BinarySearchTreeADT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TreeSimulations.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BSTNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-425">
@@ -402,16 +417,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/BinarySearchTreeADT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BSTTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-571">
-          <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+        <state relative-caret-position="221">
+          <caret line="74" column="101" lean-forward="true" selection-start-line="74" selection-start-column="101" selection-end-line="74" selection-end-column="101" />
           <folding>
-            <element signature="e#3446#3447#0" expanded="true" />
-            <element signature="e#3497#3498#0" expanded="true" />
-            <element signature="e#5370#5371#0" expanded="true" />
-            <element signature="e#5415#5416#0" expanded="true" />
+            <element signature="e#4792#4793#0" expanded="true" />
+            <element signature="e#4843#4844#0" expanded="true" />
+            <element signature="e#6716#6717#0" expanded="true" />
+            <element signature="e#6761#6762#0" expanded="true" />
             <element signature="e#6556#6565#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TreeSimulations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="94" lean-forward="true" selection-start-line="52" selection-start-column="4" selection-end-line="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
