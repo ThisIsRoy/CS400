@@ -180,59 +180,62 @@ public class BSTTree<T extends Comparable<T>> implements BinarySearchTreeADT<T> 
     // ********************************
     // --- TREE TRAVERSAL FUNCTIONS ---
     // ********************************
-    public void postOrderTraversal() {
-        postOrderTraversal(this.root);
+    public String postOrderTraversal() {
+        String postOrder = "";
+        return postOrderTraversal(this.root, postOrder);
     }
 
-    private void postOrderTraversal(BSTNode<T> current) {
+    private String postOrderTraversal(BSTNode<T> current, String postOrder) {
         if (current != null) {
-            postOrderTraversal(current.getLeft());
-            postOrderTraversal(current.getRight());
-            System.out.println(current.getData());
+            postOrder = postOrderTraversal(current.getLeft(), postOrder);
+            postOrder = postOrderTraversal(current.getRight(), postOrder);
+            postOrder = postOrder + " " + current.getData();
         }
+        return postOrder;
     }
 
     public String preOrderTraversal() {
         String preOrder = "";
-        preOrderTraversal(this.root, preOrder);
-        return preOrder;
+        return preOrderTraversal(this.root, preOrder);
     }
 
-    private void preOrderTraversal(BSTNode<T> current, String preOrder) {
+    private String preOrderTraversal(BSTNode<T> current, String preOrder) {
         if (current != null) {
-            preOrder += current.getData();
-            preOrderTraversal(current.getLeft(), preOrder);
-            preOrderTraversal(current.getRight(), preOrder);
+            preOrder = preOrder + " " + current.getData();
+            preOrder = preOrderTraversal(current.getLeft(), preOrder);
+            preOrder = preOrderTraversal(current.getRight(), preOrder);
         }
+        return preOrder;
     }
 
     public String inOrderTraversal() {
         String inOrder = "";
-        preOrderTraversal(this.root, inOrder);
-        return inOrder;
+        return inOrderTraversal(this.root, inOrder);
     }
 
-    private void inOrderTraversal(BSTNode<T> current, String inOrder) {
+    private String inOrderTraversal(BSTNode<T> current, String inOrder) {
         if (current != null) {
-            inOrderTraversal(current.getLeft(), inOrder);
-            inOrder += current.getData();
-            inOrderTraversal(current.getRight(), inOrder);
+            inOrder = inOrderTraversal(current.getLeft(), inOrder);
+            inOrder = inOrder + " " + current.getData();
+            inOrder = inOrderTraversal(current.getRight(), inOrder);
         }
+        return inOrder;
     }
 
     public static void main(String[] args) {
         BSTTree<Integer> tree = new BSTTree<Integer>();
-        tree.insert(5);
         tree.insert(7);
-        tree.insert(10);
+        tree.insert(3);
         tree.insert(4);
         tree.insert(6);
+        tree.insert(9);
+        tree.insert(1);
+        tree.insert(8);
 
         tree.printSideways();
-
-        tree.remove(7);
-
-        tree.printSideways();
+        System.out.println("Preorder is " + tree.preOrderTraversal());
+        System.out.println("Inorder is " + tree.inOrderTraversal());
+        System.out.println("Post order is " + tree.postOrderTraversal());
         // System.out.println(tree.preOrderTraversal());
     }
 

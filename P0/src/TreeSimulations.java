@@ -1,31 +1,36 @@
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class TreeSimulations {
     public static void testManyTrees(int randSeed, int treeSize, int randRange, int numTrees){
         //  initial setup
-        BSTTree<Integer> tree;
+        BSTTree<Integer> tree = new BSTTree<>();
+        int minHeight;
+        int maxHeight;
+        Double avgHeight;
+        List<Integer> heights = new ArrayList<Integer>();
         Random rnd = new Random(randSeed); // Random with seed
 
         // iterate numTrees times
+        for (int i = 0; i < numTrees; i++) {
+            tree = new BSTTree<>();
 
-        // instantiate a new tree each time
+            // add nodes until tree reaches specified size
+            while (tree.getSize() < treeSize) {
+                tree.insert(rnd.nextInt(randRange));
+            }
 
-        // continue while the size of this tree is less than treeSize
-
-        // use this code to insert a random Integer into a tree
-        tree.insert(rnd.nextInt(randRange));
-
-
-
-        //  after filling, if the tree tree's height equals its size, print out the tree
-        int height = tree.getHeight();
-        if (height == tree.getSize()) {
-            tree.printSideways();
+            // calculate and store height
+            int height = tree.getHeight();
+            heights.add(height);
+            if (height == tree.getSize()) {
+                tree.printSideways();
+            }
         }
 
         // update data on max, min, and average height
-
+        avgHeight = heights.stream().mapToInt(val -> val).average().orElse(0.0);
+        minHeight = heights.get(heights.indexOf(Collections.min(heights)));
+        maxHeight = heights.get(heights.indexOf(Collections.max(heights)));
 
         ///// after all simulated trees made, output statistics
         System.out.println("min height was : " + minHeight);
@@ -33,6 +38,7 @@ public class TreeSimulations {
         System.out.println("avg height was : " + avgHeight);
     } // testManyTrees
 
+    // testing
     public static void main(String[] args) {
         System.out.println("Welcome to the BST Simulator.");
         Scanner scnr = new Scanner(System.in);
@@ -46,8 +52,10 @@ public class TreeSimulations {
         int numTrees = scnr.nextInt();
         testManyTrees(randSeed, treeSize, randRange, numTrees);
         scnr.close();
-    } // main
-} // class
+    }
+}
+
+
 // see sample run below
 
 //    Sample Run:
