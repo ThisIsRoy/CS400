@@ -1,3 +1,24 @@
+//
+// Title:           tests the binary search tree class by running simulations and gathering statistics
+// Files:           Requires: BSTNode.java, BSTNode.java
+// Course:          CS 400 Fall 19 2019
+//
+// Author:          Roy Sun
+// Email:           rsun65@wisc.edu
+// Lecturer's Name: Andrew Kuemmel
+//
+///////////////////////////// CREDIT OUTSIDE HELP /////////////////////////////
+//
+// Students who get help from sources other than their partner must fully
+// acknowledge and credit those sources of help here.  Instructors and TAs do
+// not need to be credited here, but tutors, friends, relatives, room mates,
+// strangers, and others do.  If you received no outside help from either type
+//  of source, then please explicitly indicate NONE.
+//
+// Persons:         N/A
+// Online Sources:  stackoverflow.com: one liner for average, min and max heights
+//
+
 import java.util.*;
 
 public class TreeSimulations {

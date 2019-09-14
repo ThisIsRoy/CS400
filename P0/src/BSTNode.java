@@ -1,3 +1,24 @@
+//
+// Title:           implementation of a binary search tree node
+// Files:           Requires: N/A
+// Course:          CS 400 Fall 19 2019
+//
+// Author:          Roy Sun
+// Email:           rsun65@wisc.edu
+// Lecturer's Name: Andrew Kuemmel
+//
+///////////////////////////// CREDIT OUTSIDE HELP /////////////////////////////
+//
+// Students who get help from sources other than their partner must fully
+// acknowledge and credit those sources of help here.  Instructors and TAs do
+// not need to be credited here, but tutors, friends, relatives, room mates,
+// strangers, and others do.  If you received no outside help from either type
+//  of source, then please explicitly indicate NONE.
+//
+// Persons:         NONE
+// Online Sources:  NONE
+//
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -11,31 +32,58 @@ public class BSTNode<T extends Comparable<T>> {
         this.data = data;
     }
 
-// add getters and setters
+    /**
+     * get data in node
+     * @return data in node
+     */
     public T getData() {
         return data;
     }
 
+    /**
+     * set data in node
+     * @param data data to place in node
+     */
     public void setData(T data) {
         this.data = data;
     }
 
+    /**
+     * get left child of node
+     * @return left child of node
+     */
     public BSTNode<T> getLeft() {
         return left;
     }
 
+    /**
+     * set left child of node
+     * @param left new left child of node
+     */
     public void setLeft(BSTNode<T> left) {
         this.left = left;
     }
 
+    /**
+     * get right child of node
+     * @return right child of node
+     */
     public BSTNode<T> getRight() {
         return right;
     }
 
+    /**
+     * set right child of node
+     * @param right new right child of node
+     */
     public void setRight(BSTNode<T> right) {
         this.right = right;
     }
 
+    /**
+     * get height of current node to the leaf
+     * @return height in integer value
+     */
     public int getHeight() {
         // base case leaf node
         if (this.getLeft() == null & this.getRight() == null) {
@@ -51,6 +99,10 @@ public class BSTNode<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * get total number of elements in current node and its children
+     * @return number of elements in integer value
+     */
     public int getSize() {
         // base case leaf node
         if (this.getLeft() == null & this.getRight() == null) {
@@ -66,6 +118,10 @@ public class BSTNode<T extends Comparable<T>> {
         }
     }
 
+    /**
+     * get number of children for current node
+     * @return number of children in integer value
+     */
     public int numOfChildren() {
         int numOfChildren = 0;
 
@@ -79,6 +135,10 @@ public class BSTNode<T extends Comparable<T>> {
         return numOfChildren;
     }
 
+    /**
+     * get the children of the current node
+     * @return child node in an list
+     */
     public List<BSTNode<T>> getChildren() {
         List<BSTNode<T>> children = new ArrayList<BSTNode<T>>();
         if (getLeft() != null) {
