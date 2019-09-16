@@ -48,17 +48,12 @@ public class BSTTree<T extends Comparable<T>> implements BinarySearchTreeADT<T> 
         // insert node once we reach end of tree
         if (current == null) {
             current = new BSTNode<T>(element);
-            System.out.println("Node " + element + " added successfully!");
 
             // continue to look for end of tree via recursion
         } else if (element.compareTo(current.getData()) < 0 ) {
             current.setLeft(insert(current.getLeft(), element));
         } else if (element.compareTo(current.getData()) > 0) {
             current.setRight(insert(current.getRight(), element));
-
-            // catch error
-        } else {
-            System.out.println("Element " + element + " already exists in the tree!");
         }
 
         return current;
@@ -73,7 +68,6 @@ public class BSTTree<T extends Comparable<T>> implements BinarySearchTreeADT<T> 
             // root node is element to remove
             if (root.getData() == element) {
                 remove(null, root, 0);
-                System.out.println("Node " + element + " removed successfully!");
 
                 // start recursion helper function to look for node
             } else {
@@ -357,20 +351,27 @@ public class BSTTree<T extends Comparable<T>> implements BinarySearchTreeADT<T> 
     public static void main(String[] args) {
         BSTTree<Integer> tree = new BSTTree<Integer>();
         tree.insert(7);
+
+
+
         tree.insert(3);
+
+        tree.remove(7);
+
+        tree.printSideways();
+
+        tree.remove(3);
+        tree.printSideways();
         tree.insert(4);
         tree.insert(6);
         tree.insert(9);
         tree.insert(1);
         tree.insert(8);
 
-        tree.printSideways();
-//        System.out.println("Preorder is " + tree.preOrderTraversal());
-//        System.out.println("Inorder is " + tree.inOrderTraversal());
-//        System.out.println("Post order is " + tree.postOrderTraversal());
-
-        tree.remove(3);
-        tree.printSideways();
+//        tree.printSideways();
+////
+//        tree.remove(3);
+//        tree.printSideways();
         // System.out.println(tree.preOrderTraversal());
     }
 

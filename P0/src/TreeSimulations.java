@@ -67,9 +67,9 @@ public class TreeSimulations {
         int randSeed = scnr.nextInt();
         System.out.println("Enter the number of Integers to be placed in each tree: ");
         int treeSize = scnr.nextInt();
-        System.out.println("enter the maximum random integer to be generated: ");
+        System.out.println("Enter the maximum random integer to be generated: ");
         int randRange = scnr.nextInt();
-        System.out.println("enter the number of trees to be simulated: ");
+        System.out.println("Enter the number of trees to be simulated: ");
         int numTrees = scnr.nextInt();
         testManyTrees(randSeed, treeSize, randRange, numTrees);
         scnr.close();
