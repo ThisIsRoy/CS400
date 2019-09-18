@@ -303,9 +303,20 @@ public class StringHeap {
      *
      * @return a new String ArrayList that contains only the Strings at this level
      */
-    public ArrayList<String> getLevel(int level) {
-        // TODO
-        return null;
+    public ArrayList<String> getLevel(int level) throws IndexOutOfBoundsException {
+        if (level < 1 || level > getHeight()) {
+            throw new IndexOutOfBoundsException("No such level exists in heap");
+        }
+
+        int startIndex = (int) Math.pow(2, level - 1) - 1;
+        int iter = startIndex + 1;
+        ArrayList<String> levelArr = new ArrayList<String>();
+
+        for (int i = startIndex; i < startIndex + iter; i ++) {
+            levelArr.add(heap[i]);
+        }
+
+        return levelArr;
     }
 
     /*
@@ -327,7 +338,10 @@ public class StringHeap {
      *     - one per line following the indexing of the heap array
      */
     public void printHeap() {
-        // TODO
+        System.out.println(getSize());
+        for (int i = 0; i < heap.length; i++) {
+            System.out.println(heap[i]);
+        }
     }
 
     /*

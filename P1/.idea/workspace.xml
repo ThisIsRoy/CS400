@@ -15,8 +15,8 @@
       <file leaf-file-name="StringHeap.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/StringHeap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="308" column="5" lean-forward="true" selection-start-line="308" selection-start-column="5" selection-end-line="308" selection-end-column="5" />
+            <state relative-caret-position="370">
+              <caret line="342" column="37" selection-start-line="342" selection-start-column="37" selection-end-line="342" selection-end-column="37" />
               <folding>
                 <element signature="e#0#6063#0" expanded="true" />
                 <element signature="e#7320#7321#0" expanded="true" />
@@ -35,6 +35,7 @@
                 <element signature="e#8627#8628#0" expanded="true" />
                 <element signature="e#8840#8841#0" expanded="true" />
                 <element signature="e#8920#8921#0" expanded="true" />
+                <element signature="e#10090#10098#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,7 +57,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1688" />
     <option name="y" value="153" />
     <option name="width" value="1696" />
@@ -170,7 +171,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1688" y="153" width="1696" height="1026" extended-state="6" />
+    <frame x="-1688" y="153" width="1696" height="1026" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
@@ -182,7 +183,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32930845" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32930845" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
@@ -207,8 +208,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/StringHeap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="308" column="5" lean-forward="true" selection-start-line="308" selection-start-column="5" selection-end-line="308" selection-end-column="5" />
+        <state relative-caret-position="370">
+          <caret line="342" column="37" selection-start-line="342" selection-start-column="37" selection-end-line="342" selection-end-column="37" />
           <folding>
             <element signature="e#0#6063#0" expanded="true" />
             <element signature="e#7320#7321#0" expanded="true" />
@@ -227,6 +228,7 @@
             <element signature="e#8627#8628#0" expanded="true" />
             <element signature="e#8840#8841#0" expanded="true" />
             <element signature="e#8920#8921#0" expanded="true" />
+            <element signature="e#10090#10098#0" expanded="true" />
           </folding>
         </state>
       </provider>
