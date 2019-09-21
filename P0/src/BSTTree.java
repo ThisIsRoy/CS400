@@ -366,17 +366,17 @@ public class BSTTree<T extends Comparable<T>> implements BinarySearchTreeADT<T> 
         tree.insert(5);
         tree.insert(6);
 
-        tree.printSideways();
         tree.remove(2);
 
+//
+        tree.remove(4);
+//
+//        tree.printSideways();
+        tree.remove(3);
         tree.printSideways();
-//
-//        tree.remove(4);
-//
-//        tree.printSideways();
-//        tree.remove(3);
-//        tree.printSideways();
-        // System.out.println(tree.preOrderTraversal());
+        System.out.println(tree.preOrderTraversal());
+        System.out.println(tree.getHeight());
+
     }
 
 

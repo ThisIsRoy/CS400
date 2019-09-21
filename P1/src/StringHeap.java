@@ -49,6 +49,16 @@ public class StringHeap {
      * second has higher priority; 0 if the priorities are equal
      */
     public static int prioritize(String first, String second) {
+
+        // check for null values
+        if (first == null && second == null) {
+            return 0;
+        } else if (first == null) {
+            return -1;
+        } else if (second == null) {
+            return 1;
+        }
+
         first = first.toLowerCase();
         second = second.toLowerCase();
         int compare;
@@ -70,7 +80,7 @@ public class StringHeap {
 
                 // strings have same number of vowels, compare alphabetical order
             } else {
-                return first.compareTo(second);
+                return -1 * first.compareTo(second);
             }
         }
     }
@@ -106,9 +116,13 @@ public class StringHeap {
             throw  new IllegalArgumentException("Invalid input");
         }
 
-        // heap is max capacity
+         // increase heap capacity if heap is at max
         if (size == heap.length) {
-            return;
+            String[] newHeap = new String[heap.length * 2];
+            for (int i = 0; i < heap.length; i ++) {
+                newHeap[i] = heap[i];
+            }
+            heap = newHeap;
         }
 
         size++;
@@ -149,6 +163,7 @@ public class StringHeap {
     private void switchNodes(int firstIndex, int secondIndex) {
         String currStr = heap[firstIndex];
         heap[firstIndex] = heap[secondIndex];
+
         heap[secondIndex] = currStr;
     }
 
@@ -206,20 +221,17 @@ public class StringHeap {
         int leftChildIndex = getLeftChildIndex(currIndex);
         int rightChildIndex = getRightChildIndex(currIndex);
 
-        //out of bound index, leaf node
-        if (leftChildIndex > size - 1 || rightChildIndex > size -1) {
-            return 0;
-        }
+        // get value for child if not out of bounds
+        String leftChildValue = leftChildIndex > size - 1 ? null : heap[leftChildIndex];
+        String rightChildValue = rightChildIndex > size - 1 ? null : heap[rightChildIndex];
 
-        // not leaf node, but doesn't have children
-        String leftChildValue = heap[leftChildIndex];
-        String rightChildValue = heap[rightChildIndex];
+        // no children
         String currentValue = heap[currIndex];
         if (leftChildValue == null && rightChildValue == null) {
             return 0;
         }
 
-        // returns no child if neither children priority is greater than parent priority
+        // returns no child if parent has higher or equal priority than both children
         if (prioritize(currentValue, leftChildValue) >= 0 && prioritize(currentValue, rightChildValue) >= 0 ) {
             return 0;
         }
@@ -266,7 +278,7 @@ public class StringHeap {
      * @return the number of Strings stored in the heap
      */
     public int getSize() {
-        return heap.length;
+        return size;
     }
 
     /*
@@ -292,7 +304,7 @@ public class StringHeap {
      * @return integer for height of tree
      */
     private int heapHeightMath(int size) {
-        return (int) Math.ceil(Math.log(size + 1) / Math.log(2) + 1e-10);
+        return (int) Math.ceil(Math.log(size + 1) / Math.log(2));
     }
 
     /*
@@ -309,13 +321,14 @@ public class StringHeap {
         }
 
         int startIndex = (int) Math.pow(2, level - 1) - 1;
-        int iter = startIndex + 1;
         ArrayList<String> levelArr = new ArrayList<String>();
 
-        for (int i = startIndex; i < startIndex + iter; i ++) {
-            levelArr.add(heap[i]);
-        }
+        for (int i = startIndex; i <= startIndex * 2; i ++) {
+            if (heap.length > i) {
+                levelArr.add(heap[i]);
 
+            }
+        }
         return levelArr;
     }
 
@@ -329,8 +342,11 @@ public class StringHeap {
      *
      */
     public String[] getHeap() {
-        // TODO
-        return null;
+        String[] newHeap = new String[heap.length];
+        for (int i = 0; i < size; i++) {
+            newHeap[i] = heap[i];
+        }
+        return newHeap;
     }
 
     /*
@@ -349,17 +365,43 @@ public class StringHeap {
      *     - one level per line with nodes delimited by a single whitespace
      */
     public void printLevelOrderTraversal() {
-        // TODO
+        ArrayList<String> level;
+        String levelStr;
+        for (int i = 1; i < getHeight()+ 1; i++) {
+            level = getLevel(i);
+
+            // grab existing values
+            levelStr = "";
+            for (String value : level) {
+                levelStr = levelStr + value + " ";
+            }
+
+            System.out.println(levelStr);
+        }
     }
 
     // you are welcome to add private methods
 
     public static void main(String[] args) {
         // you do not need a main method, but you can use it to test your code
-        String[] test = new String[5];
-
-        System.out.println("length is " + test.length);
-    }
+        StringHeap test = new StringHeap(2);
+        test.add("R");
+        test.add("O");
+        System.out.println(test.getHeight());
+        System.out.println(test.getLevel(1));
+        System.out.println(test.getLevel(2));
+        test.add("Y");
+        System.out.println("---------");
+        System.out.println(test.getHeight());
+        System.out.println(test.getLevel(1));
+        System.out.println(test.getLevel(2));
+        // test.printLevelOrderTraversal();
+//        test.remove();
+//        System.out.println(test.getHeight());
+//        System.out.println(test.getLevel(2));
+//        System.out.println(test.peek());
+//        test.printLevelOrderTraversal();
+}
 }
 
 
