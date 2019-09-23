@@ -49,7 +49,6 @@ public class StringHeap {
      * second has higher priority; 0 if the priorities are equal
      */
     public static int prioritize(String first, String second) {
-
         // check for null values
         if (first == null && second == null) {
             return 0;
@@ -61,9 +60,18 @@ public class StringHeap {
 
         first = first.toLowerCase();
         second = second.toLowerCase();
-        int compare;
+        int compare = Integer.compare(first.length(), second.length());
 
-        compare = Integer.compare(first.length(), second.length());
+        if (first.equals("watermelon") || second.equals("watermelon")){
+            System.out.println(first + " first length is " + first.length());
+            System.out.println(second + " second length is " + second.length());
+        }
+
+//        if (first.equals("grapefruit") || second.equals("grapefruit")) {
+//            System.out.println(first + " first length is " + first.length());
+//            System.out.println(second + " second length is " + second.length());
+//            System.out.println(first + " compared to " + second + " at length is " + compare);
+//        }
 
         // strings have different length
         if (compare != 0) {
@@ -80,6 +88,9 @@ public class StringHeap {
 
                 // strings have same number of vowels, compare alphabetical order
             } else {
+                if (first.equals("grapefruit") || second.equals("grapefruit")) {
+                    System.out.println(first + " compared to " + second + " is " + first.compareTo(second));
+                }
                 return -1 * first.compareTo(second);
             }
         }
@@ -125,6 +136,7 @@ public class StringHeap {
             heap = newHeap;
         }
 
+        // add value and bubble up to maintain heap
         size++;
         heap[size - 1] = value;
         bubbleUp(size - 1);
@@ -136,10 +148,6 @@ public class StringHeap {
      * @param currIndex index of the current node in the heap
      */
     private void bubbleUp(int currIndex) {
-        if (currIndex == 0) {
-            return;
-        }
-
         while (currIndex != 0) {
             int parentIndex = getParentIndex(currIndex);
 
@@ -163,7 +171,6 @@ public class StringHeap {
     private void switchNodes(int firstIndex, int secondIndex) {
         String currStr = heap[firstIndex];
         heap[firstIndex] = heap[secondIndex];
-
         heap[secondIndex] = currStr;
     }
 
@@ -271,7 +278,7 @@ public class StringHeap {
      * @return true if the String has no elements, false otherwise
      */
     public boolean isEmpty() {
-        return heap.length == 0;
+        return size == 0;
     }
 
     /*
@@ -323,10 +330,10 @@ public class StringHeap {
         int startIndex = (int) Math.pow(2, level - 1) - 1;
         ArrayList<String> levelArr = new ArrayList<String>();
 
+        // loop through each value in the level, exclude out of bounds values
         for (int i = startIndex; i <= startIndex * 2; i ++) {
-            if (heap.length > i) {
+            if (size > i) {
                 levelArr.add(heap[i]);
-
             }
         }
         return levelArr;
@@ -342,6 +349,11 @@ public class StringHeap {
      *
      */
     public String[] getHeap() {
+        // return null if empty heap
+        if (isEmpty()) {
+            return null;
+        }
+
         String[] newHeap = new String[heap.length];
         for (int i = 0; i < size; i++) {
             newHeap[i] = heap[i];
@@ -355,8 +367,9 @@ public class StringHeap {
      */
     public void printHeap() {
         System.out.println(getSize());
-        for (int i = 0; i < heap.length; i++) {
-            System.out.println(heap[i]);
+        for (String value: heap)
+            if (value != null) {
+                System.out.println(value);
         }
     }
 
@@ -367,13 +380,15 @@ public class StringHeap {
     public void printLevelOrderTraversal() {
         ArrayList<String> level;
         String levelStr;
-        for (int i = 1; i < getHeight()+ 1; i++) {
+        for (int i = 1; i < getHeight() + 1; i++) {
             level = getLevel(i);
 
             // grab existing values
             levelStr = "";
             for (String value : level) {
-                levelStr = levelStr + value + " ";
+                if (value != null) {
+                    levelStr = levelStr + value + " ";
+                }
             }
 
             System.out.println(levelStr);
@@ -384,18 +399,25 @@ public class StringHeap {
 
     public static void main(String[] args) {
         // you do not need a main method, but you can use it to test your code
-        StringHeap test = new StringHeap(2);
-        test.add("R");
-        test.add("O");
-        System.out.println(test.getHeight());
-        System.out.println(test.getLevel(1));
-        System.out.println(test.getLevel(2));
-        test.add("Y");
-        System.out.println("---------");
-        System.out.println(test.getHeight());
-        System.out.println(test.getLevel(1));
-        System.out.println(test.getLevel(2));
-        // test.printLevelOrderTraversal();
+//        StringHeap test = new StringHeap(10);
+//        test.add("watermelon");
+//        test.add("apple");
+//        test.add("pear");
+//
+//        test.add("orange");
+//        test.add("papaya");
+//        test.add("strawberry");
+//        test.add("peach");
+//        test.add("banana");
+//        test.add("mango");
+//
+//        test.add("grapefruit");
+//        // test.printHeap();
+//        test.printLevelOrderTraversal();
+//
+//        test.remove();
+//
+//        test.printLevelOrderTraversal();
 //        test.remove();
 //        System.out.println(test.getHeight());
 //        System.out.println(test.getLevel(2));

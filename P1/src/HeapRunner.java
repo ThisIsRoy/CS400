@@ -14,6 +14,10 @@ public class HeapRunner {
 
             while (scnr.hasNextLine()) {
                 String word = scnr.nextLine();
+                System.out.println("Word is |" + word + "|");
+                if (word.equals("watermelon")) {
+                    System.out.println("WATERMELONNNNNNNNNNNNNNNN");
+                }
                 heap.add(word);
             }
 
