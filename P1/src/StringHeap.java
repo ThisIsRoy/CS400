@@ -62,17 +62,6 @@ public class StringHeap {
         second = second.toLowerCase();
         int compare = Integer.compare(first.length(), second.length());
 
-        if (first.equals("watermelon") || second.equals("watermelon")){
-            System.out.println(first + " first length is " + first.length());
-            System.out.println(second + " second length is " + second.length());
-        }
-
-//        if (first.equals("grapefruit") || second.equals("grapefruit")) {
-//            System.out.println(first + " first length is " + first.length());
-//            System.out.println(second + " second length is " + second.length());
-//            System.out.println(first + " compared to " + second + " at length is " + compare);
-//        }
-
         // strings have different length
         if (compare != 0) {
             return compare;
@@ -354,9 +343,10 @@ public class StringHeap {
             return null;
         }
 
-        String[] newHeap = new String[heap.length];
+        String[] newHeap = new String[heap.length + 1];
+        newHeap[0] = null;
         for (int i = 0; i < size; i++) {
-            newHeap[i] = heap[i];
+            newHeap[i + 1] = heap[i];
         }
         return newHeap;
     }
@@ -399,7 +389,12 @@ public class StringHeap {
 
     public static void main(String[] args) {
         // you do not need a main method, but you can use it to test your code
-//        StringHeap test = new StringHeap(10);
+        StringHeap test = new StringHeap(10);
+        test.add("Detroit");
+        test.add("Houston");
+        test.add("Madison");
+        test.add("Seattle");
+        test.add("Boise");
 //        test.add("watermelon");
 //        test.add("apple");
 //        test.add("pear");
@@ -413,7 +408,7 @@ public class StringHeap {
 //
 //        test.add("grapefruit");
 //        // test.printHeap();
-//        test.printLevelOrderTraversal();
+        test.printLevelOrderTraversal();
 //
 //        test.remove();
 //
