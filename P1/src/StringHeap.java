@@ -118,8 +118,16 @@ public class StringHeap {
 
          // increase heap capacity if heap is at max
         if (size == heap.length) {
-            String[] newHeap = new String[heap.length * 2];
-            for (int i = 0; i < heap.length; i ++) {
+            String[] newHeap;
+
+            // error check for 0 length
+            if (size == 0) {
+                newHeap = new String[1];
+            } else {
+                newHeap = new String[heap.length * 2];
+            }
+
+            for (int i = 0; i < heap.length; i++) {
                 newHeap[i] = heap[i];
             }
             heap = newHeap;
@@ -389,7 +397,7 @@ public class StringHeap {
 
     public static void main(String[] args) {
         // you do not need a main method, but you can use it to test your code
-        StringHeap test = new StringHeap(10);
+        StringHeap test = new StringHeap(0);
         test.add("Detroit");
         test.add("Houston");
         test.add("Madison");

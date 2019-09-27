@@ -15,8 +15,8 @@
       <file leaf-file-name="StringHeap.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/StringHeap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="410" column="40" selection-start-line="410" selection-end-line="410" selection-end-column="40" />
+            <state relative-caret-position="229">
+              <caret line="375" column="75" lean-forward="true" selection-start-line="375" selection-start-column="75" selection-end-line="375" selection-end-column="75" />
               <folding>
                 <element signature="e#0#13016#0" expanded="true" />
                 <element signature="e#9750#9751#0" expanded="true" />
@@ -187,7 +187,7 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32843137" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32843137" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
@@ -315,8 +315,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StringHeap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="410" column="40" selection-start-line="410" selection-end-line="410" selection-end-column="40" />
+        <state relative-caret-position="229">
+          <caret line="375" column="75" lean-forward="true" selection-start-line="375" selection-start-column="75" selection-end-line="375" selection-end-column="75" />
           <folding>
             <element signature="e#0#13016#0" expanded="true" />
             <element signature="e#9750#9751#0" expanded="true" />

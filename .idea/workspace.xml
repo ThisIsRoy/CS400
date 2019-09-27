@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8210eed9-c6f2-4b63-af93-32d18d8c3459" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/P2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/P2/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/P2/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/P2/P2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/P0/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/P1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P1/out/production/P1/StringHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/P1/out/production/P1/StringHeap.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P1/src/StringHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/P1/src/StringHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/P2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P2/src/AVLTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/P2/src/AVLTree.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,9 +44,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -175,15 +172,22 @@
       <option name="project" value="LOCAL" />
       <updated>1569095090626</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="finish p1">
+      <created>1569300067255</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1569300067255</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1135" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32941177" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -207,6 +211,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.32941177" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -225,6 +230,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/P0/src/BinarySearchTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/P0/src/BinarySearchTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
