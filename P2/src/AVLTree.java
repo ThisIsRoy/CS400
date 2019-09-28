@@ -189,16 +189,12 @@ public class AVLTree<K extends Comparable<K>, V> implements TreeADT<K, V> {
 	}
 
 	/**
-	 * helper function for balancing node
+	 * helper function for balancing node, assuming current node is not null
 	 * @param currNode current node
 	 * @param balanceFactor balance factor of current node
 	 */
 	private TreeNode<K, V> balance(TreeNode<K, V> currNode, int balanceFactor) {
-	    // node is deleted
-	    if (currNode == null) {
-            return null;
-        }
-
+	    // check balance factor
 		if (balanceFactor >= 2) {
 			int leftBalanceFactor = currNode.getLeft().getBalanceFactor();
 
@@ -243,16 +239,17 @@ public class AVLTree<K extends Comparable<K>, V> implements TreeADT<K, V> {
             return;
         }
 
-        root = delete(root, key);
+        root = delete(root, key, true);
 	};
 
     /**
      * helper function that uses recursion to find the node to delete
      * @param currNode current node
      * @param key key to delete
+     * @param rebalance whether or not to rebalance after deletion
      * @return value of the current node after the possible deletion
      */
-	private TreeNode<K, V> delete(TreeNode<K, V> currNode, K key) {
+	private TreeNode<K, V> delete(TreeNode<K, V> currNode, K key, boolean rebalance) {
 	    // leaf node, stop recursion
 	    if (currNode == null) {
             return null;
@@ -265,17 +262,16 @@ public class AVLTree<K extends Comparable<K>, V> implements TreeADT<K, V> {
         } else {
             // key to insert is less than current key, go left
             if (key.compareTo(currKey) < 0) {
-                currNode.setLeft(delete(currNode.getLeft(), key));
+                currNode.setLeft(delete(currNode.getLeft(), key, true));
 
                 // key to insert is greater than current key, go right
             } else if (key.compareTo(currKey) > 0) {
-                currNode.setRight(delete(currNode.getRight(), key));
-
+                currNode.setRight(delete(currNode.getRight(), key, true));
             }
         }
 
         // check balance factor if current node is not null
-        if (currNode != null) {
+        if (currNode != null && rebalance) {
             currNode = balance(currNode, currNode.getBalanceFactor());
         }
 
@@ -284,21 +280,63 @@ public class AVLTree<K extends Comparable<K>, V> implements TreeADT<K, V> {
 
     /**
      * helper function to perform the actual deletion algorithm on the current node
+     * assumes current node is not null
      * @param currNode current node
      * @return current node after deletion
      */
     private TreeNode<K, V> deleteNode(TreeNode<K, V> currNode) {
         int numOfChildren = currNode.numOfChildren();
 
-        // no chilren, simply delete node
+        // no children, simply delete node
         if (numOfChildren == 0) {
             return null;
+
+            // one child, attach child to parent of current node
+        } else if (numOfChildren == 1) {
+            return currNode.getLeft() != null ? currNode.getLeft() : currNode.getRight();
+
+            // two children, find in-order predecessor and replace current node with it
+        } else if (numOfChildren == 2) {
+            TreeNode<K, V> inOrderPredecessor = getInOrderPredecessor(currNode);
+
+            // replace current node with in-order predecessor
+            inOrderPredecessor.setLeft(currNode.getLeft());
+            inOrderPredecessor.setRight(currNode.getRight());
+            return inOrderPredecessor;
         }
 
         return null;
     }
-   
-	/**
+
+    /**
+     * helper function for finding the in-order predecessor node
+     * @param currNode current node
+     * @return node towards the in-order predecessor
+     */
+    private TreeNode<K,V> getInOrderPredecessor(TreeNode<K,V> currNode) {
+        // current node is root, go left
+        if (currNode == root) {
+            return getInOrderPredecessor(currNode.getLeft());
+
+            // current node has right child, go right
+        } else if (currNode.getRight() != null) {
+            return getInOrderPredecessor(currNode.getRight());
+
+            // current node has no right child, current node is in-order predecessor
+        } else {
+            // delete the in-order predecessor
+            try {
+                delete(root, currNode.getKey(), false);
+
+            } catch(Exception e) {
+                System.out.println("Error in getting in order predecessor");
+            }
+
+            return currNode;
+        }
+    }
+
+    /**
 	 * AVLTree rotate left.
      * Assumes root has a right child
 	 * @param root an imbalance node
@@ -334,8 +372,9 @@ public class AVLTree<K extends Comparable<K>, V> implements TreeADT<K, V> {
 
 	/**
 	 * Get a value in the tree given the key.
+     * returns null if key not found
 	 * @param key
-	 * @return value  the object associated with this key
+	 * @return value the object associated with this key
 	 * @throws IllegalArgumentException if the key is null
 	 */
 	public V get(K key) throws IllegalKeyException {
@@ -346,7 +385,17 @@ public class AVLTree<K extends Comparable<K>, V> implements TreeADT<K, V> {
 		return get(root, key);
 	};
 
+    /**
+     * helper function for finding the node with the specified key
+     * @param currNode current node
+     * @param key key to look for
+     * @return the value of the key to look for
+     */
 	private V get(TreeNode<K, V> currNode, K key) {
+        if (currNode == null) {
+            return null;
+        }
+
 		K currKey = currNode.getKey();
 
 		if (currKey.compareTo(key) == 0) {
@@ -354,11 +403,11 @@ public class AVLTree<K extends Comparable<K>, V> implements TreeADT<K, V> {
 
 			// key is smaller, look left
 		}  else if (key.compareTo(currKey) < 0) {
-			return get(currNode.getLeft(), key);
+		    return get(currNode.getLeft(), key);
 
 			// key is larger, look right
 		} else {
-			return get(currNode.getRight(), key);
+		    return get(currNode.getRight(), key);
 		}
 	}
 
@@ -367,7 +416,23 @@ public class AVLTree<K extends Comparable<K>, V> implements TreeADT<K, V> {
      * @return string of pre-order traversal
      */
     public String preOrderTraversal() {
-        return null;
+        String preOrder = "";
+        return preOrderTraversal(this.root, preOrder);
+    }
+
+    /**
+     * helper function for {@link #preOrderTraversal()}
+     * @param current current node
+     * @param preOrder string value for the traversal
+     * @return string value for the traversal
+     */
+    private String preOrderTraversal(TreeNode<K, V> current, String preOrder) {
+        if (current != null) {
+            preOrder = preOrder + " " + current.getKey();
+            preOrder = preOrderTraversal(current.getLeft(), preOrder);
+            preOrder = preOrderTraversal(current.getRight(), preOrder);
+        }
+        return preOrder;
     }
 
 	/**
@@ -401,7 +466,9 @@ public class AVLTree<K extends Comparable<K>, V> implements TreeADT<K, V> {
             test.insert(1, "wefwe");
             test.insert(6, "werw");
             test.insert(8, "werwe");
-            test.delete(8);
+            test.insert(10, "werwertge");
+            test.insert(9, "werwer");
+            test.delete(6);
             test.printSideways();
         } catch (IllegalKeyException e) {
             System.out.println("lmaooo");

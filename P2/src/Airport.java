@@ -4,7 +4,7 @@
 public class Airport {
 	private String locid;
 	private String city;
-	private String airportName;
+	private String name;
 
 	/**
 	 * Constructor.
@@ -15,7 +15,31 @@ public class Airport {
 	public Airport(String locid, String city, String airportName) {
 		this.locid = locid;
 		this.city = city;
-		this.airportName = airportName;
+		this.name = airportName;
+	}
+	
+	/**
+	 * Gets airport id.
+	 * @return
+	 */
+	public String getId() {
+		return locid;
+	}
+	
+	/**
+	 * Gets airport city.
+	 * @return
+	 */
+	public String getCity() {
+		return city;
+	}
+	
+	/**
+	 * Gets airport name.
+	 * @return
+	 */
+	public String getName() {
+		return name;
 	}
 
 	/**
@@ -25,6 +49,6 @@ public class Airport {
 	 */
 	@Override
 	public String toString() {
-		return locid + ": " + airportName + ", " + city;
+		return locid + ": " + name + ", " + city;
 	}
 }

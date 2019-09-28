@@ -19,21 +19,54 @@ public class AirportDataReader {
 			while (csvScnr.hasNextLine()) {
 				String row = csvScnr.nextLine();
 				String[] data = row.split(",");
+                Airport airport = new Airport(data[3], data[4], data[5]);
 
-					// TODO: extract airport data: ID, city, name
-					// TODO: create airport object
-					// TODO: insert airport into tree
-					// TODO: catch exceptions
-
+                // insert airports from file
+                try {
+                    tree.insert(data[3], airport);
+                } catch (IllegalKeyException e) {
+                    System.out.println("Illegal key");
+                } catch (DuplicateKeyException f) {
+                    System.out.println("Duplicate key");
+                }
 			}
 			csvScnr.close();
 		} catch (FileNotFoundException e1) {
 			System.out.println("File not found.");
 		}
 
-		// TODO: prompt user to look up airport
-		// TODO: accept user input of 3-digit code
-		// TODO: get airport object, print to standard output
-		// TODO: exit when a user enters an airport code that is not found
+        String input;
+        Airport output = new Airport("", "", "");
+        Scanner scanner = new Scanner(System.in);
+
+		while (output != null) {
+		    // grab user input
+            System.out.print("Enter 3-digit airport id: ");
+            input = scanner.nextLine();
+
+            // try to find airport in AVL tree
+            if (input.length() != 3) {
+                output = null;
+
+            } else {
+                try {
+                    output = tree.get(input);
+
+                    if (output != null) {
+                        System.out.println(output);
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("Illegal key");
+                }
+            }
+        }
+
+//        try {
+//            System.out.println(tree.get("MKE"));
+//
+//        } catch (Exception exception) {
+//            System.out.println("lmaoooo");
+//        }
 	}
 }
