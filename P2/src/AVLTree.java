@@ -127,7 +127,6 @@ public class AVLTree<K extends Comparable<K>, V> implements TreeADT<K, V> {
         }
 	}
 
-   // TODO:  IMPLEMENT ALL INTERFACE METHODS
 	/**
 	 * Checks for an empty tree.
 	 * @return true if tree contains 0 items
@@ -461,14 +460,23 @@ public class AVLTree<K extends Comparable<K>, V> implements TreeADT<K, V> {
     public static void main(String[] args) {
         AVLTree<Integer, String> test = new AVLTree<Integer, String>();
         try {
-            test.insert(3,"lmao");
-            test.insert(2, "ljw");
-            test.insert(1, "wefwe");
-            test.insert(6, "werw");
-            test.insert(8, "werwe");
-            test.insert(10, "werwertge");
-            test.insert(9, "werwer");
-            test.delete(6);
+            test.insert(5,"lmao");
+            test.insert(3, "werwertge");
+
+            test.insert(8, "ljw");
+            test.insert(2, "werwer");
+            test.insert(4, "wefwe");
+            test.insert(7, "werw");
+            test.insert(15, "werwer");
+            test.insert(1, "werwe");
+            test.insert(6, "werwe");
+            test.insert(9, "werwe");
+            test.insert(17, "werwe");
+            test.insert(19, "werwe");
+
+
+
+            test.delete(5);
             test.printSideways();
         } catch (IllegalKeyException e) {
             System.out.println("lmaooo");
