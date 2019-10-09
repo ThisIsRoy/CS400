@@ -12,17 +12,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RedBlackTree.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RedBlackTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RedBlackTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-762">
-              <caret line="165" selection-start-line="165" selection-end-line="165" />
+            <state relative-caret-position="381">
+              <caret line="411" column="46" selection-start-line="411" selection-start-column="46" selection-end-line="411" selection-end-column="46" />
               <folding>
                 <element signature="docComment;method#isEmpty#0;class#RedBlackTree#0" />
                 <element signature="docComment;method#getSize#0;class#RedBlackTree#0" />
                 <element signature="docComment;method#getSize#1;class#RedBlackTree#0" />
                 <element signature="method#getSize#1;class#RedBlackTree#0" />
                 <element signature="docComment;method#getHeight#0;class#RedBlackTree#0" />
+                <element signature="e#1320#1321#0" expanded="true" />
+                <element signature="e#1344#1345#0" expanded="true" />
                 <element signature="docComment;method#getHeight#1;class#RedBlackTree#0" />
                 <element signature="method#getHeight#1;class#RedBlackTree#0" />
                 <element signature="docComment;method#rightRightRecolor#0;class#RedBlackTree#0" />
@@ -37,9 +39,7 @@
                 <element signature="docComment;method#rotateRight#0;class#RedBlackTree#0" />
                 <element signature="method#rotateRight#0;class#RedBlackTree#0" />
                 <element signature="docComment;method#getValue#0;class#RedBlackTree#0" />
-                <element signature="method#getValue#0;class#RedBlackTree#0" />
                 <element signature="docComment;method#get#0;class#RedBlackTree#0" />
-                <element signature="method#get#0;class#RedBlackTree#0" />
                 <element signature="docComment;method#preOrderTraversal#0;class#RedBlackTree#0" />
                 <element signature="method#preOrderTraversal#0;class#RedBlackTree#0" />
                 <element signature="docComment;method#preOrderTraversal#1;class#RedBlackTree#0" />
@@ -50,24 +50,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WordCountRunner.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WordCountRunner.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WordCountRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+            <state relative-caret-position="493">
+              <caret line="29" column="70" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#231#248#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file leaf-file-name="IllegalKeyException.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/IllegalKeyException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state>
+              <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+              <folding>
+                <element signature="e#373#374#0" expanded="true" />
+                <element signature="e#416#417#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,14 +94,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/IllegalKeyException.java" />
         <option value="$PROJECT_DIR$/src/RedBlackTree.java" />
         <option value="$PROJECT_DIR$/src/WordCountRunner.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="-100" />
+    <option name="y" value="153" />
     <option name="width" value="1936" />
     <option name="height" value="1135" />
   </component>
@@ -135,9 +144,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.WordCountRunner">
     <configuration name="RedBlackTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RedBlackTree" />
+      <module name="P3" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="WordCountRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WordCountRunner" />
       <module name="P3" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -182,8 +196,13 @@
       <properties />
       <listeners />
     </configuration>
+    <list>
+      <item itemvalue="Application.RedBlackTree" />
+      <item itemvalue="Application.WordCountRunner" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WordCountRunner" />
         <item itemvalue="Application.RedBlackTree" />
       </list>
     </recent_temporary>
@@ -213,12 +232,12 @@
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32941177" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
@@ -238,14 +257,31 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/WordCountRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="30" lean-forward="true" selection-end-line="61" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/IllegalKeyException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state>
+          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+          <folding>
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#416#417#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -256,27 +292,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WordCountRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#231#248#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/RedBlackTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-762">
-          <caret line="165" selection-start-line="165" selection-end-line="165" />
+        <state relative-caret-position="381">
+          <caret line="411" column="46" selection-start-line="411" selection-start-column="46" selection-end-line="411" selection-end-column="46" />
           <folding>
             <element signature="docComment;method#isEmpty#0;class#RedBlackTree#0" />
             <element signature="docComment;method#getSize#0;class#RedBlackTree#0" />
             <element signature="docComment;method#getSize#1;class#RedBlackTree#0" />
             <element signature="method#getSize#1;class#RedBlackTree#0" />
             <element signature="docComment;method#getHeight#0;class#RedBlackTree#0" />
+            <element signature="e#1320#1321#0" expanded="true" />
+            <element signature="e#1344#1345#0" expanded="true" />
             <element signature="docComment;method#getHeight#1;class#RedBlackTree#0" />
             <element signature="method#getHeight#1;class#RedBlackTree#0" />
             <element signature="docComment;method#rightRightRecolor#0;class#RedBlackTree#0" />
@@ -291,14 +318,22 @@
             <element signature="docComment;method#rotateRight#0;class#RedBlackTree#0" />
             <element signature="method#rotateRight#0;class#RedBlackTree#0" />
             <element signature="docComment;method#getValue#0;class#RedBlackTree#0" />
-            <element signature="method#getValue#0;class#RedBlackTree#0" />
             <element signature="docComment;method#get#0;class#RedBlackTree#0" />
-            <element signature="method#get#0;class#RedBlackTree#0" />
             <element signature="docComment;method#preOrderTraversal#0;class#RedBlackTree#0" />
             <element signature="method#preOrderTraversal#0;class#RedBlackTree#0" />
             <element signature="docComment;method#preOrderTraversal#1;class#RedBlackTree#0" />
             <element signature="method#preOrderTraversal#1;class#RedBlackTree#0" />
             <element signature="e#11653#11670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WordCountRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="70" selection-start-line="29" selection-start-column="70" selection-end-line="29" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

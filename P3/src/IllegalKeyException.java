@@ -1,7 +1,20 @@
 /**
  * Checked exception thrown when a user attempts to insert or get a null key.
  */
-@SuppressWarnings("serial") 
+@SuppressWarnings("serial")
 public class IllegalKeyException extends Exception {
-   // TODO:  Write two constructors, one that accepts a String message and one that accepts no parameters.
+    /**
+     * constructor that requires no arguments
+     */
+    public IllegalKeyException() {
+
+    }
+
+    /**
+     * constructor that takes in an error message
+     * @param message error message
+     */
+    public IllegalKeyException(String message) {
+        System.out.println(message);
+    }
 }

@@ -1,5 +1,29 @@
+//
+// Title:           P2 - implementation of an AVL tree
+// Files:           Requires: IllegalKeyException.java, DuplicateKeyException.java
+// Course:          CS 400 Fall 19 2019
+//
+// Author:          Roy Sun
+// Email:           rsun65@wisc.edu
+// Lecturer's Name: Andrew Kuemmel
+//
+///////////////////////////// CREDIT OUTSIDE HELP /////////////////////////////
+//
+// Students who get help from sources other than their partner must fully
+// acknowledge and credit those sources of help here.  Instructors and TAs do
+// not need to be credited here, but tutors, friends, relatives, room mates,
+// strangers, and others do.  If you received no outside help from either type
+//  of source, then please explicitly indicate NONE.
+//
+// Persons:         NONE
+// Online Sources:  NONE
+//
+
 // remember that you are not allowed to add any public methods or fields
 // but you can add any private methods or fields
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AVLTree<K extends Comparable<K>, V> implements TreeADT<K, V> {
 	public TreeNode<K, V> root = null;
@@ -458,31 +482,17 @@ public class AVLTree<K extends Comparable<K>, V> implements TreeADT<K, V> {
 	}
 
     public static void main(String[] args) {
-        AVLTree<Integer, String> test = new AVLTree<Integer, String>();
-        try {
-            test.insert(5,"lmao");
-            test.insert(3, "werwertge");
-
-            test.insert(8, "ljw");
-            test.insert(2, "werwer");
-            test.insert(4, "wefwe");
-            test.insert(7, "werw");
-            test.insert(15, "werwer");
-            test.insert(1, "werwe");
-            test.insert(6, "werwe");
-            test.insert(9, "werwe");
-            test.insert(17, "werwe");
-            test.insert(19, "werwe");
-
-
-
-            test.delete(5);
-            test.printSideways();
-        } catch (IllegalKeyException e) {
-            System.out.println("lmaooo");
-        } catch (DuplicateKeyException f) {
-            System.out.println("lmaooooo");
-        }
-
+//        AVLTree<Integer, String> test = new AVLTree<Integer, String>();
+//        try {
+//            test.insert(1, "eklf");
+//            test.delete(10);
+//            test.printSideways();
+//        } catch (IllegalKeyException e) {
+//            System.out.println("lmaooo");
+//        } catch (DuplicateKeyException f) {
+//            System.out.println("lmaooooo");
+//        }
+		System.out.println(3/2);
+		// System.out.println(test[4]);
     }
 }

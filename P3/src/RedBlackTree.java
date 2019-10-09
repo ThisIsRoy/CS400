@@ -71,7 +71,7 @@ public class RedBlackTree<K extends Comparable<K>, V> implements SearchTreeADT<K
 	 * @return height of the subtree
 	 */
 	private int getHeight(RBNode currNode) {
-		if (root == null) {
+		if (currNode == null) {
 			return 0;
 		}
 
@@ -88,7 +88,7 @@ public class RedBlackTree<K extends Comparable<K>, V> implements SearchTreeADT<K
 	 */
 	public void insert(K key, V value) throws IllegalKeyException {
 		if (key == null) {
-			throw new IllegalKeyException();
+			throw new IllegalKeyException("Illegal key for insertion");
 		}
 
         this.root = insert(root, key, value);
@@ -407,6 +407,9 @@ public class RedBlackTree<K extends Comparable<K>, V> implements SearchTreeADT<K
             tree.insert(6, "werwe");
             tree.insert(5, "werwe");
             tree.insert(10,"");
+
+            System.out.println(tree.getValue(3));
+            System.out.println(tree.getValue(5));
 
         } catch (Exception e) {
             System.out.println("illegal key lmao");
