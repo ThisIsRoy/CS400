@@ -1,8 +1,29 @@
+//
+// Title:           implementation of a red black tree
+// Files:           Requires: N/A
+// Course:          CS 400 Fall 19 2019
+//
+// Author:          Roy Sun
+// Email:           rsun65@wisc.edu
+// Lecturer's Name: Andrew Kuemmel
+//
+///////////////////////////// CREDIT OUTSIDE HELP /////////////////////////////
+//
+// Students who get help from sources other than their partner must fully
+// acknowledge and credit those sources of help here.  Instructors and TAs do
+// not need to be credited here, but tutors, friends, relatives, room mates,
+// strangers, and others do.  If you received no outside help from either type
+//  of source, then please explicitly indicate NONE.
+//
+// Persons:         NONE
+// Online Sources:  NONE
+//
+
 import java.io.File;
 import java.util.Scanner;
 
 public class WordCountRunner {
-    private static final String INPUT_FILE = "pride_and_prejudice.txt";
+    private static final String INPUT_FILE = "test.txt";
 
     public static void main(String[] args) {
         RedBlackTree<String, Integer> tree = new RedBlackTree<String, Integer>(); //root input???
@@ -64,8 +85,18 @@ public class WordCountRunner {
             System.out.print("Enter a word to search for in \"" + INPUT_FILE + "\": ");
             request = input.next().replaceAll("[^a-zA-Z ]", "").toLowerCase();
             try {
-                wordCount = tree.getValue(request);
-                System.out.println("\"" + request + "\" was found in the file " + wordCount + " times.");
+                if (request.equals("qqq")) {
+                    wordCount = null;
+                } else {
+                    wordCount = tree.getValue(request);
+                    if (wordCount == null) {
+                        wordCount = 0;
+                        System.out.println("\"" + request + "\" was not found in the given file.");
+                    } else {
+                        System.out.println("\"" + request + "\" was found in the file " + wordCount + " times.");
+                    }
+                }
+
             } catch (Exception e) {
                 System.out.println("Illegal key exception");
             }
@@ -73,7 +104,5 @@ public class WordCountRunner {
 
 
         System.out.println("Exiting.");
-        System.out.println("\"" + request + "\" was not found in the given file.");
-
     }
 }

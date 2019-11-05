@@ -1,3 +1,24 @@
+//
+// Title:           implementation of a red black tree
+// Files:           Requires: N/A
+// Course:          CS 400 Fall 19 2019
+//
+// Author:          Roy Sun
+// Email:           rsun65@wisc.edu
+// Lecturer's Name: Andrew Kuemmel
+//
+///////////////////////////// CREDIT OUTSIDE HELP /////////////////////////////
+//
+// Students who get help from sources other than their partner must fully
+// acknowledge and credit those sources of help here.  Instructors and TAs do
+// not need to be credited here, but tutors, friends, relatives, room mates,
+// strangers, and others do.  If you received no outside help from either type
+//  of source, then please explicitly indicate NONE.
+//
+// Persons:         NONE
+// Online Sources:  NONE
+//
+
 public class RedBlackTree<K extends Comparable<K>, V> implements SearchTreeADT<K, V> {
 
 // Note:  your RedBlackTree implementation must be consistent with the class notes and specifications.
@@ -355,7 +376,14 @@ public class RedBlackTree<K extends Comparable<K>, V> implements SearchTreeADT<K
 	 */
 	public String preOrderTraversal() {
 		String preOrder = "";
-		return preOrderTraversal(this.root, preOrder);
+		preOrder =  preOrderTraversal(this.root, preOrder);
+
+		// strip out leading empty space
+		if (preOrder.length() > 0) {
+			preOrder = preOrder.substring(1);
+		}
+
+		return preOrder;
 	}
 
 	/**
@@ -399,23 +427,22 @@ public class RedBlackTree<K extends Comparable<K>, V> implements SearchTreeADT<K
     public static void main(String[] args) {
         RedBlackTree<Integer, String> tree = new RedBlackTree<Integer, String>();
         try {
-            tree.insert(4, "wfw");
-            tree.insert(3, "wer");
-            tree.insert(7, "werw");
-            tree.insert(2, "wefwe");
-            tree.insert(1, "wefwe");
-            tree.insert(6, "werwe");
-            tree.insert(5, "werwe");
-            tree.insert(10,"");
+            tree.insert(7, "wfw");
+            tree.insert(14, "wer");
+            tree.insert(18, "werw");
+//            tree.insert(2, "wefwe");
+//            tree.insert(1, "wefwe");
+//            tree.insert(6, "werwe");
+//            tree.insert(5, "werwe");
+//            tree.insert(10,"");
+			tree.printSideways();
 
-            System.out.println(tree.getValue(3));
-            System.out.println(tree.getValue(5));
 
         } catch (Exception e) {
             System.out.println("illegal key lmao");
         }
 
-        tree.printSideways();
+        // tree.printSideways();
 
     }
 }

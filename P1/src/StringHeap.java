@@ -393,6 +393,15 @@ public class StringHeap {
         }
     }
 
+    public static int power(int exponent) {
+        int result = 1;
+
+        for (int e = 0; e < exponent; e++) {
+            result = (result << 5) - result;
+        }
+        return result;
+    }
+
     // you are welcome to add private methods
 
     public static void main(String[] args) {
@@ -403,6 +412,7 @@ public class StringHeap {
         test.add("Madison");
         test.add("Seattle");
         test.add("Boise");
+        System.out.println(test.power(2));
 //        test.add("watermelon");
 //        test.add("apple");
 //        test.add("pear");
@@ -416,7 +426,7 @@ public class StringHeap {
 //
 //        test.add("grapefruit");
 //        // test.printHeap();
-        test.printLevelOrderTraversal();
+        // test.printLevelOrderTraversal();
 //
 //        test.remove();
 //
