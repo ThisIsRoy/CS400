@@ -1,0 +1,11 @@
+﻿Rank,RO,ST,Locid,City,Airport Name,S/L,Hub,CY 18 Enplanements,CY 17 Enplanements,% Change
+1,SO,GA,ATL,Atlanta,Hartsfield - Jackson Atlanta International,P,L,51866464,50251964,0.0321
+2,WP,CA,LAX,Los Angeles,Los Angeles International,P,L,42626783,41232432,0.0338
+3,GL,IL,ORD,Chicago,Chicago O'Hare International,P,L,39874879,38593028,0.0332
+4,SW,TX,DFW,Fort Worth,Dallas-Fort Worth International,P,L,32800721,31816933,0.0309
+5,NM,CO,DEN,Denver,Denver International,P,L,31363573,29809097,0.0521
+6,EA,NY,JFK,New York,John F Kennedy International,P,L,30541459,29533154,0.0341
+7,WP,CA,SFO,San Francisco,San Francisco International,P,L,27794154,26900048,0.0332
+8,NM,WA,SEA,Seattle,Seattle-Tacoma International,P,L,24025098,22639124,0.0612
+9,WP,NV,LAS,Las Vegas,McCarran International,P,L,23655285,23364393,0.0125
+10,SO,FL,MCO,Orlando,Orlando International,P,L,23184634,21565448,0.0751
