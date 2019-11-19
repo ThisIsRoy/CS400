@@ -1,3 +1,24 @@
+//
+// Title:           friend graph algorithms
+// Files:           Requires: N/A
+// Course:          CS 400 Fall 19 2019
+//
+// Author:          Roy Sun
+// Email:           rsun65@wisc.edu
+// Lecturer's Name: Andrew Kuemmel
+//
+///////////////////////////// CREDIT OUTSIDE HELP /////////////////////////////
+//
+// Students who get help from sources other than their partner must fully
+// acknowledge and credit those sources of help here.  Instructors and TAs do
+// not need to be credited here, but tutors, friends, relatives, room mates,
+// strangers, and others do.  If you received no outside help from either type
+//  of source, then please explicitly indicate NONE.
+//
+// Persons:         NONE
+// Online Sources:  NONE
+//
+
 import java.util.List;
 import java.util.Set;
 
@@ -69,7 +90,13 @@ public interface SocialNetworkADT {
 	 */
 	public boolean isFriendGroup(Set<String> people);
 	
-
+	/**
+	 * Six degrees of separation is the idea that all people are six, or fewer, social connections away from each
+	 * other. In other words, a chain of "a friend of a friend" statements can be made to connect any two people in a
+	 * maximum of six steps. If the network is empty return true.
+	 * @return true if the theory holds for this network, otherwise false
+	 */
+	public boolean sixDegreesOfSeparation();
 	
 	/**
 	 * Given two people, the first one wanting to be friends with the second, return a list, in order, of the fewest 

@@ -1,5 +1,5 @@
 //
-// Title:           implementation of a graph
+// Title:           friend graph algorithms
 // Files:           Requires: N/A
 // Course:          CS 400 Fall 19 2019
 //

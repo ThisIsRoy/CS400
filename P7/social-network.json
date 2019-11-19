@@ -2,19 +2,19 @@
 	"socialNetwork": [
 	    {
 	        "name": "Lilly",
-	        "friends": ["Aaron", "Scott"]
-	    },
-	    {
-	        "name": "Scott",
-	        "friends": ["Malika", "Lilly"]
-	    },
-	    {
-	        "name": "Malika",
 	        "friends": ["Scott"]
 	    },
 	    {
-	        "name": "Aaron",
+	        "name": "Scott",
 	        "friends": ["Lilly"]
+	    },
+	    {
+	        "name": "Malika",
+	        "friends": ["Aaron"]
+	    },
+	    {
+	        "name": "Aaron",
+	        "friends": ["Malika"]
 	    }
 	] 
 }
