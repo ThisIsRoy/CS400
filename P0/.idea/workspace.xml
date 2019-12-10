@@ -4,12 +4,12 @@
     <list default="true" id="a2bed9a5-7a2d-487f-9849-f02f37540aa8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P0/BSTTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P0/BSTTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BSTTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BSTTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../P1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../P2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../P3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../P3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../P3/src/WordCountRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../P3/src/WordCountRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../P6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../P7/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P7/out/production/P7/SocialNetwork.class" beforeDir="false" afterPath="$PROJECT_DIR$/../P7/out/production/P7/SocialNetwork.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P7/src/SocialNetwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/../P7/src/SocialNetwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P7/src/SocialNetworkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../P7/src/SocialNetworkTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,11 +24,10 @@
       <file leaf-file-name="BSTTree.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BSTTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret selection-end-line="19" selection-end-column="2" />
+            <state relative-caret-position="737">
+              <caret line="345" column="5" lean-forward="true" selection-start-line="323" selection-start-column="3" selection-end-line="345" selection-end-column="5" />
               <folding>
                 <element signature="e#0#12509#0" expanded="true" />
-                <element signature="e#12130#12139#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -37,7 +36,7 @@
       <file leaf-file-name="BSTNode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BSTNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2057">
+            <state relative-caret-position="1717">
               <caret line="135" column="5" selection-start-line="124" selection-start-column="3" selection-end-line="135" selection-end-column="5" />
               <folding>
                 <element signature="e#0#4378#0" expanded="true" />
@@ -86,11 +85,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="52" />
-    <option name="y" value="163" />
-    <option name="width" value="1936" />
-    <option name="height" value="1135" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="1149" />
+    <option name="height" value="1407" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -98,9 +96,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -117,6 +112,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -253,7 +251,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1135" extended-state="6" />
+    <frame x="-7" y="0" width="1149" height="1407" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -268,7 +266,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.42365402" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -277,11 +275,11 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32647058" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32647058" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -296,13 +294,19 @@
     <option name="LAST_COMMIT_MESSAGE" value="added javadoc/comments" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/TreeSimulations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="71" column="29" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BSTTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5678">
           <caret line="359" column="8" selection-start-line="359" selection-start-column="8" selection-end-line="359" selection-end-column="8" />
           <folding>
             <element signature="e#0#12509#0" expanded="true" />
-            <element signature="e#12130#12139#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -686,7 +690,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BSTNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
+        <state relative-caret-position="1717">
           <caret line="135" column="5" selection-start-line="124" selection-start-column="3" selection-end-line="135" selection-end-column="5" />
           <folding>
             <element signature="e#0#4378#0" expanded="true" />
@@ -697,11 +701,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BSTTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret selection-end-line="19" selection-end-column="2" />
+        <state relative-caret-position="737">
+          <caret line="345" column="5" lean-forward="true" selection-start-line="323" selection-start-column="3" selection-end-line="345" selection-end-column="5" />
           <folding>
             <element signature="e#0#12509#0" expanded="true" />
-            <element signature="e#12130#12139#0" expanded="true" />
           </folding>
         </state>
       </provider>

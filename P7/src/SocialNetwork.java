@@ -35,6 +35,16 @@ public class SocialNetwork implements SocialNetworkADT {
     private Graph<String> graph;
     private static String filename;
 
+    private class Dijkstra {
+        HashMap<String, Double> distance;
+        HashMap<String, String> predecessor;
+
+        private Dijkstra(HashMap<String, Double> distance, HashMap<String, String> predecessor) {
+            this.distance = distance;
+            this.predecessor = predecessor;
+        }
+    }
+
     /**
      * Constructs a social network from a json file.
      * @param filename json file
@@ -351,7 +361,7 @@ public class SocialNetwork implements SocialNetworkADT {
 
         for (String person : graph.getAllVertices()) {
             // check the distance from start node using dijkstra's algorithm
-            distance = dijkstra(this.graph, person).get(0);
+            distance = dijkstra(this.graph, person).distance;
             for (String personDist : distance.keySet()) {
                 if (distance.get(personDist) > 6.0) {
                     return false;
@@ -367,7 +377,7 @@ public class SocialNetwork implements SocialNetworkADT {
      * @param startPerson starting person to find distances for
      * @return list of two values, the distance map and the predecessor map
      */
-    private List<HashMap> dijkstra(Graph<String> graph, String startPerson) {
+    private Dijkstra dijkstra(Graph<String> graph, String startPerson) {
         String current = startPerson;
         Double min;
         Set<String> visited = new HashSet<String>();
@@ -413,10 +423,7 @@ public class SocialNetwork implements SocialNetworkADT {
         }
 
         // add two maps to a list to return
-        List<HashMap> distAndPred = new ArrayList<HashMap>();
-        distAndPred.add(distance);
-        distAndPred.add(predecessor);
-        return distAndPred;
+        return new Dijkstra(distance, predecessor);
     }
 
     /**
@@ -441,7 +448,7 @@ public class SocialNetwork implements SocialNetworkADT {
         }
 
         // use dijsktra to find mapping of graph
-        HashMap<String, String> predecessor = dijkstra(this.graph, person1).get(1);
+        HashMap<String, String> predecessor = dijkstra(this.graph, person1).predecessor;
         String current = predecessor.get(person2);
         if (current == null) {
             return path;
@@ -535,7 +542,7 @@ public class SocialNetwork implements SocialNetworkADT {
         }
 
         List<String> list = new ArrayList<String>(graph.getAllVertices());
-        HashMap<String, Double> distance = dijkstra(graph, list.get(0)).get(0);
+        HashMap<String, Double> distance = dijkstra(graph, list.get(0)).distance;
 
         // use dijsktra to ensure every person is reachable
         for (String person : graph.getAllVertices()) {

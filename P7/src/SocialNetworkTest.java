@@ -403,89 +403,89 @@ public class SocialNetworkTest {
         }
     }
 
-    @Test
-    public final void test25_sixDegrees3() {
-        try {
-            this.network = new SocialNetwork("social-network-long.json"); //modified social network
-            assertEquals("Long graph, should return false",
-                    false, network.sixDegreesOfSeparation());
-        } catch (Exception e) {
-            e.printStackTrace();
-            fail("test25: failed - unexpected exception occurred");
-        }
-    }
-
-    @Test
-    public final void test26_glue6() {
-        try {
-            this.network = new SocialNetwork("social-network-long.json"); //modified social network
-            Set<String> output = new HashSet<String>();
-            output.add("Lilly");
-            output.add("Scott");
-            output.add("Malika");
-            output.add("Aaron");
-            output.add("Sam");
-            output.add("Josh");
-            output.add("Ben");
-            output.add("Steve");
-            assertEquals("Long graph, Aaron should be glue",
-                    "Aaron", network.glue(output));
-        } catch (Exception e) {
-            e.printStackTrace();
-            fail("test26: failed - unexpected exception occurred");
-        }
-    }
-
-    @Test
-    public final void test27_glue7() {
-        try {
-            this.network = new SocialNetwork("social-network-long.json"); //modified social network
-            Set<String> output = new HashSet<String>();
-            output.add("Lilly");
-            output.add("Scott");
-            output.add("Malika");
-            output.add("Sam");
-            output.add("Josh");
-            output.add("Ben");
-            output.add("Steve");
-            assertEquals("Disconnected graph",
-                    "", network.glue(output));
-        } catch (Exception e) {
-            e.printStackTrace();
-            fail("test27: failed - unexpected exception occurred");
-        }
-    }
-
-    @Test
-    public final void test28_glue8() {
-        try {
-            this.network = new SocialNetwork("social-network-long.json"); //modified social network
-            Set<String> output = new HashSet<String>();
-            output.add("Sam");
-            output.add("Josh");
-            output.add("Ben");
-            assertEquals("Josh should be glue",
-                    "Josh", network.glue(output));
-        } catch (Exception e) {
-            e.printStackTrace();
-            fail("test28: failed - unexpected exception occurred");
-        }
-    }
-
-    @Test
-    public final void test29_ladder4() {
-        try {
-            this.network = new SocialNetwork("social-network-long.json"); //modified social network
-            List<String> output = new ArrayList<String>();
-            output.add("Sam");
-            output.add("Josh");
-            output.add("Ben");
-            output.add("Steve");
-            assertEquals("Sam - Josh - Ben - Steve",
-                    output, network.socialLadder("Sam", "Steve"));
-        } catch (Exception e) {
-            e.printStackTrace();
-            fail("test29: failed - unexpected exception occurred");
-        }
-    }
+//    @Test
+//    public final void test25_sixDegrees3() {
+//        try {
+//            this.network = new SocialNetwork("social-network-long.json"); //modified social network
+//            assertEquals("Long graph, should return false",
+//                    false, network.sixDegreesOfSeparation());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            fail("test25: failed - unexpected exception occurred");
+//        }
+//    }
+//
+//    @Test
+//    public final void test26_glue6() {
+//        try {
+//            this.network = new SocialNetwork("social-network-long.json"); //modified social network
+//            Set<String> output = new HashSet<String>();
+//            output.add("Lilly");
+//            output.add("Scott");
+//            output.add("Malika");
+//            output.add("Aaron");
+//            output.add("Sam");
+//            output.add("Josh");
+//            output.add("Ben");
+//            output.add("Steve");
+//            assertEquals("Long graph, Aaron should be glue",
+//                    "Aaron", network.glue(output));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            fail("test26: failed - unexpected exception occurred");
+//        }
+//    }
+//
+//    @Test
+//    public final void test27_glue7() {
+//        try {
+//            this.network = new SocialNetwork("social-network-long.json"); //modified social network
+//            Set<String> output = new HashSet<String>();
+//            output.add("Lilly");
+//            output.add("Scott");
+//            output.add("Malika");
+//            output.add("Sam");
+//            output.add("Josh");
+//            output.add("Ben");
+//            output.add("Steve");
+//            assertEquals("Disconnected graph",
+//                    "", network.glue(output));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            fail("test27: failed - unexpected exception occurred");
+//        }
+//    }
+//
+//    @Test
+//    public final void test28_glue8() {
+//        try {
+//            this.network = new SocialNetwork("social-network-long.json"); //modified social network
+//            Set<String> output = new HashSet<String>();
+//            output.add("Sam");
+//            output.add("Josh");
+//            output.add("Ben");
+//            assertEquals("Josh should be glue",
+//                    "Josh", network.glue(output));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            fail("test28: failed - unexpected exception occurred");
+//        }
+//    }
+//
+//    @Test
+//    public final void test29_ladder4() {
+//        try {
+//            this.network = new SocialNetwork("social-network-long.json"); //modified social network
+//            List<String> output = new ArrayList<String>();
+//            output.add("Sam");
+//            output.add("Josh");
+//            output.add("Ben");
+//            output.add("Steve");
+//            assertEquals("Sam - Josh - Ben - Steve",
+//                    output, network.socialLadder("Sam", "Steve"));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            fail("test29: failed - unexpected exception occurred");
+//        }
+//    }
 }

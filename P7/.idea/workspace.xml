@@ -10,63 +10,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="3">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="social-network-md.json" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/social-network-md.json">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="527">
-                    <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="SocialNetworkADT.java" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/SocialNetworkADT.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-991">
-                    <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-                    <folding>
-                      <element signature="e#0#6088#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="social-network-long.json" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/social-network-long.json">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="306">
-                    <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="SocialNetwork.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SocialNetwork.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="346" column="22" selection-start-line="346" selection-start-column="22" selection-end-line="346" selection-end-column="22" />
+            <state relative-caret-position="5729">
+              <caret line="363" column="60" selection-start-line="363" selection-start-column="60" selection-end-line="363" selection-end-column="60" />
               <folding>
-                <element signature="e#0#20627#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -78,9 +29,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret selection-end-line="19" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#9416#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -88,10 +36,9 @@
       <file leaf-file-name="SocialNetworkTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SocialNetworkTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="734">
-              <caret line="466" column="45" selection-start-line="466" selection-start-column="45" selection-end-line="466" selection-end-column="45" />
+            <state relative-caret-position="1632">
+              <caret line="440" column="15" selection-start-line="440" selection-start-column="15" selection-end-line="440" selection-end-column="15" />
               <folding>
-                <element signature="e#0#12985#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -110,11 +57,8 @@
       <file leaf-file-name="GraphADT.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GraphADT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state>
               <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#3406#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -122,11 +66,8 @@
       <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Person.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state>
               <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#1146#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -148,43 +89,22 @@
         <option value="$PROJECT_DIR$/src/GraphADT.java" />
         <option value="$PROJECT_DIR$/src/Person.java" />
         <option value="$PROJECT_DIR$/src/SocialNetworkADT.java" />
-        <option value="$PROJECT_DIR$/src/SocialNetwork.java" />
         <option value="$PROJECT_DIR$/social-network-long.json" />
+        <option value="$PROJECT_DIR$/src/SocialNetwork.java" />
         <option value="$PROJECT_DIR$/src/SocialNetworkTest.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1135" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="1149" />
+    <option name="height" value="1407" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="P7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P7" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="P7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="P7" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/" />
@@ -312,21 +232,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SocialNetworkTest - 2019.11.17 at 23h 24m 31s.xml">
-      <configuration name="SocialNetworkTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SocialNetworkTest - 2019.11.17 at 23h 24m 40s.xml">
-      <configuration name="SocialNetworkTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SocialNetworkTest - 2019.11.17 at 23h 24m 52s.xml">
-      <configuration name="SocialNetworkTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SocialNetworkTest - 2019.11.17 at 23h 28m 13s.xml">
-      <configuration name="SocialNetworkTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SocialNetworkTest - 2019.11.17 at 23h 35m 12s.xml">
-      <configuration name="SocialNetworkTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SocialNetworkTest - 2019.11.18 at 22h 22m 13s.xml">
       <configuration name="SocialNetworkTest" configurationId="JUnit" />
     </history-entry>
@@ -342,14 +247,28 @@
     <history-entry file="SocialNetworkTest - 2019.11.18 at 22h 38m 29s.xml">
       <configuration name="SocialNetworkTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SocialNetworkTest_test28_glue8 - 2019.11.18 at 22h 42m 39s.xml">
+      <configuration name="SocialNetworkTest.test28_glue8" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SocialNetworkTest - 2019.11.18 at 22h 42m 56s.xml">
+      <configuration name="SocialNetworkTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SocialNetworkTest - 2019.11.18 at 22h 44m 34s.xml">
+      <configuration name="SocialNetworkTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SocialNetworkTest - 2019.11.18 at 22h 45m 35s.xml">
+      <configuration name="SocialNetworkTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SocialNetworkTest - 2019.11.19 at 23h 20m 32s.xml">
+      <configuration name="SocialNetworkTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1135" extended-state="6" />
+    <frame x="-7" y="0" width="1149" height="1407" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -367,37 +286,38 @@
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="5" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32941177" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.1359375" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
+      <window_info anchor="bottom" id="Find" order="5" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
-      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Messages" order="0" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -412,30 +332,20 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../P6/src/SocialNetwork.java">
+    <entry file="file://$PROJECT_DIR$/src/SocialNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="107" column="9" lean-forward="true" selection-start-line="101" selection-start-column="8" selection-end-line="107" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#4440#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/SocialNetwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="3" lean-forward="true" selection-end-line="519" />
+        <state relative-caret-position="5729">
+          <caret line="363" column="60" selection-start-line="363" selection-start-column="60" selection-end-line="363" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/SocialNetworkTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="29" selection-end-line="347" />
+        <state>
+          <caret selection-end-line="19" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -448,30 +358,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GraphADT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state>
           <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#3406#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state>
           <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SocialNetworkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6902">
+          <caret line="440" column="15" lean-forward="true" selection-start-line="440" selection-start-column="15" selection-end-line="440" selection-end-column="15" />
           <folding>
-            <element signature="e#0#1146#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SocialNetworkADT.java">
+    <entry file="file://$PROJECT_DIR$/src/SocialNetwork.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-991">
-          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        <state relative-caret-position="5729">
+          <caret line="363" column="60" selection-start-line="363" selection-start-column="60" selection-end-line="363" selection-end-column="60" />
           <folding>
-            <element signature="e#0#6088#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -480,27 +394,184 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SocialNetworkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6205">
+          <caret line="399" column="31" selection-start-line="399" selection-start-column="31" selection-end-line="399" selection-end-column="31" />
           <folding>
-            <element signature="e#0#9416#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/social-network.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GraphADT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SocialNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5848">
+          <caret line="363" column="60" selection-start-line="363" selection-start-column="60" selection-end-line="363" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/social-network.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GraphADT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SocialNetworkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6460">
+          <caret line="399" column="31" selection-start-line="399" selection-start-column="31" selection-end-line="399" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SocialNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5729">
+          <caret line="363" column="60" selection-start-line="363" selection-start-column="60" selection-end-line="363" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/social-network.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GraphADT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SocialNetworkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6205">
+          <caret line="399" column="31" lean-forward="true" selection-start-line="399" selection-start-column="31" selection-end-line="399" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../P6/src/SocialNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="107" column="9" lean-forward="true" selection-start-line="101" selection-start-column="8" selection-end-line="107" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/SocialNetwork.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/SocialNetworkTest.java" />
+    <entry file="file://$PROJECT_DIR$/social-network.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GraphADT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="19" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/social-network-md.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
-          <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SocialNetwork.java">
+    <entry file="file://$PROJECT_DIR$/src/SocialNetworkADT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="346" column="22" selection-start-line="346" selection-start-column="22" selection-end-line="346" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#20627#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -511,12 +582,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/SocialNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5729">
+          <caret line="363" column="60" selection-start-line="363" selection-start-column="60" selection-end-line="363" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SocialNetworkTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="734">
-          <caret line="466" column="45" selection-start-line="466" selection-start-column="45" selection-end-line="466" selection-end-column="45" />
+        <state relative-caret-position="1632">
+          <caret line="440" column="15" selection-start-line="440" selection-start-column="15" selection-end-line="440" selection-end-column="15" />
           <folding>
-            <element signature="e#0#12985#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
