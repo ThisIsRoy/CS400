@@ -1,0 +1,36 @@
+{
+	"socialNetwork": [
+	    {
+	        "name": "Lilly",
+	        "friends": ["Scott"]
+	    },
+	    {
+	        "name": "Scott",
+	        "friends": ["Lilly", "Malika"]
+	    },
+	    {
+	        "name": "Malika",
+	        "friends": ["Scott", "Aaron"]
+	    },
+	    {
+	        "name": "Aaron",
+	        "friends": ["Malika", "Sam"]
+	    },
+		{
+			"name": "Sam",
+            "friends": ["Aaron", "Josh"]
+		},
+        {
+          "name": "Josh",
+          "friends": ["Sam", "Ben"]
+        },
+        {
+          "name": "Ben",
+          "friends": ["Josh", "Steve"]
+        },
+        {
+          "name": "Steve",
+          "friends": ["Ben"]
+        }
+	] 
+}
