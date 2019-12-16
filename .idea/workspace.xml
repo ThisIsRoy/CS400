@@ -39,7 +39,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -63,6 +62,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -250,12 +250,18 @@
       <option name="project" value="LOCAL" />
       <updated>1576456336776</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="finished graph + gui">
+      <created>1576463384149</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1576463384149</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1129" y="0" width="2318" height="1407" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -304,7 +310,8 @@
     <MESSAGE value="started javafx table gui" />
     <MESSAGE value="continue with search/filter table for players" />
     <MESSAGE value="continue with gui implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="continue with gui implementation" />
+    <MESSAGE value="finished graph + gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished graph + gui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -312,6 +319,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/P0/src/BinarySearchTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/P0/src/BinarySearchTree.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">

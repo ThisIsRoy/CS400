@@ -36,10 +36,30 @@
       <file leaf-file-name="SocialNetworkTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SocialNetworkTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1632">
-              <caret line="440" column="15" selection-start-line="440" selection-start-column="15" selection-end-line="440" selection-end-column="15" />
+            <state>
+              <caret selection-end-line="19" selection-end-column="2" />
               <folding>
+                <element signature="e#0#16674#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#3456#3464#0" expanded="true" />
+                <element signature="e#4282#4290#0" expanded="true" />
+                <element signature="e#4687#4695#0" expanded="true" />
+                <element signature="e#5181#5189#0" expanded="true" />
+                <element signature="e#5825#5833#0" expanded="true" />
+                <element signature="e#6207#6215#0" expanded="true" />
+                <element signature="e#6629#6637#0" expanded="true" />
+                <element signature="e#7154#7162#0" expanded="true" />
+                <element signature="e#7637#7645#0" expanded="true" />
+                <element signature="e#8066#8074#0" expanded="true" />
+                <element signature="e#8676#8684#0" expanded="true" />
+                <element signature="e#9091#9099#0" expanded="true" />
+                <element signature="e#9526#9534#0" expanded="true" />
+                <element signature="e#9992#10000#0" expanded="true" />
+                <element signature="e#10699#10707#0" expanded="true" />
+                <element signature="e#11236#11244#0" expanded="true" />
+                <element signature="e#11726#11734#0" expanded="true" />
+                <element signature="e#12291#12299#0" expanded="true" />
+                <element signature="e#12690#12698#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -298,14 +318,14 @@
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.1359375" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32941177" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -373,9 +393,97 @@
     <entry file="file://$PROJECT_DIR$/src/SocialNetworkTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6902">
-          <caret line="440" column="15" lean-forward="true" selection-start-line="440" selection-start-column="15" selection-end-line="440" selection-end-column="15" />
+          <caret line="440" column="15" selection-start-line="440" selection-start-column="15" selection-end-line="440" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#16674#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3456#3464#0" expanded="true" />
+            <element signature="e#4282#4290#0" expanded="true" />
+            <element signature="e#4687#4695#0" expanded="true" />
+            <element signature="e#5181#5189#0" expanded="true" />
+            <element signature="e#5825#5833#0" expanded="true" />
+            <element signature="e#6207#6215#0" expanded="true" />
+            <element signature="e#6629#6637#0" expanded="true" />
+            <element signature="e#7154#7162#0" expanded="true" />
+            <element signature="e#7637#7645#0" expanded="true" />
+            <element signature="e#8066#8074#0" expanded="true" />
+            <element signature="e#8676#8684#0" expanded="true" />
+            <element signature="e#9091#9099#0" expanded="true" />
+            <element signature="e#9526#9534#0" expanded="true" />
+            <element signature="e#9992#10000#0" expanded="true" />
+            <element signature="e#10699#10707#0" expanded="true" />
+            <element signature="e#11236#11244#0" expanded="true" />
+            <element signature="e#11726#11734#0" expanded="true" />
+            <element signature="e#12291#12299#0" expanded="true" />
+            <element signature="e#12690#12698#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SocialNetwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5729">
+          <caret line="363" column="60" selection-start-line="363" selection-start-column="60" selection-end-line="363" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/social-network.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GraphADT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SocialNetworkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6902">
+          <caret line="440" column="15" lean-forward="true" selection-start-line="440" selection-start-column="15" selection-end-line="440" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#16674#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#3456#3464#0" expanded="true" />
+            <element signature="e#4282#4290#0" expanded="true" />
+            <element signature="e#4687#4695#0" expanded="true" />
+            <element signature="e#5181#5189#0" expanded="true" />
+            <element signature="e#5825#5833#0" expanded="true" />
+            <element signature="e#6207#6215#0" expanded="true" />
+            <element signature="e#6629#6637#0" expanded="true" />
+            <element signature="e#7154#7162#0" expanded="true" />
+            <element signature="e#7637#7645#0" expanded="true" />
+            <element signature="e#8066#8074#0" expanded="true" />
+            <element signature="e#8676#8684#0" expanded="true" />
+            <element signature="e#9091#9099#0" expanded="true" />
+            <element signature="e#9526#9534#0" expanded="true" />
+            <element signature="e#9992#10000#0" expanded="true" />
+            <element signature="e#10699#10707#0" expanded="true" />
+            <element signature="e#11236#11244#0" expanded="true" />
+            <element signature="e#11726#11734#0" expanded="true" />
+            <element signature="e#12291#12299#0" expanded="true" />
+            <element signature="e#12690#12698#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -402,7 +510,27 @@
         <state relative-caret-position="6205">
           <caret line="399" column="31" selection-start-line="399" selection-start-column="31" selection-end-line="399" selection-end-column="31" />
           <folding>
+            <element signature="e#0#16674#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#3456#3464#0" expanded="true" />
+            <element signature="e#4282#4290#0" expanded="true" />
+            <element signature="e#4687#4695#0" expanded="true" />
+            <element signature="e#5181#5189#0" expanded="true" />
+            <element signature="e#5825#5833#0" expanded="true" />
+            <element signature="e#6207#6215#0" expanded="true" />
+            <element signature="e#6629#6637#0" expanded="true" />
+            <element signature="e#7154#7162#0" expanded="true" />
+            <element signature="e#7637#7645#0" expanded="true" />
+            <element signature="e#8066#8074#0" expanded="true" />
+            <element signature="e#8676#8684#0" expanded="true" />
+            <element signature="e#9091#9099#0" expanded="true" />
+            <element signature="e#9526#9534#0" expanded="true" />
+            <element signature="e#9992#10000#0" expanded="true" />
+            <element signature="e#10699#10707#0" expanded="true" />
+            <element signature="e#11236#11244#0" expanded="true" />
+            <element signature="e#11726#11734#0" expanded="true" />
+            <element signature="e#12291#12299#0" expanded="true" />
+            <element signature="e#12690#12698#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -471,7 +599,27 @@
         <state relative-caret-position="6460">
           <caret line="399" column="31" selection-start-line="399" selection-start-column="31" selection-end-line="399" selection-end-column="31" />
           <folding>
+            <element signature="e#0#16674#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#3456#3464#0" expanded="true" />
+            <element signature="e#4282#4290#0" expanded="true" />
+            <element signature="e#4687#4695#0" expanded="true" />
+            <element signature="e#5181#5189#0" expanded="true" />
+            <element signature="e#5825#5833#0" expanded="true" />
+            <element signature="e#6207#6215#0" expanded="true" />
+            <element signature="e#6629#6637#0" expanded="true" />
+            <element signature="e#7154#7162#0" expanded="true" />
+            <element signature="e#7637#7645#0" expanded="true" />
+            <element signature="e#8066#8074#0" expanded="true" />
+            <element signature="e#8676#8684#0" expanded="true" />
+            <element signature="e#9091#9099#0" expanded="true" />
+            <element signature="e#9526#9534#0" expanded="true" />
+            <element signature="e#9992#10000#0" expanded="true" />
+            <element signature="e#10699#10707#0" expanded="true" />
+            <element signature="e#11236#11244#0" expanded="true" />
+            <element signature="e#11726#11734#0" expanded="true" />
+            <element signature="e#12291#12299#0" expanded="true" />
+            <element signature="e#12690#12698#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -519,7 +667,27 @@
         <state relative-caret-position="6205">
           <caret line="399" column="31" lean-forward="true" selection-start-line="399" selection-start-column="31" selection-end-line="399" selection-end-column="31" />
           <folding>
+            <element signature="e#0#16674#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#3456#3464#0" expanded="true" />
+            <element signature="e#4282#4290#0" expanded="true" />
+            <element signature="e#4687#4695#0" expanded="true" />
+            <element signature="e#5181#5189#0" expanded="true" />
+            <element signature="e#5825#5833#0" expanded="true" />
+            <element signature="e#6207#6215#0" expanded="true" />
+            <element signature="e#6629#6637#0" expanded="true" />
+            <element signature="e#7154#7162#0" expanded="true" />
+            <element signature="e#7637#7645#0" expanded="true" />
+            <element signature="e#8066#8074#0" expanded="true" />
+            <element signature="e#8676#8684#0" expanded="true" />
+            <element signature="e#9091#9099#0" expanded="true" />
+            <element signature="e#9526#9534#0" expanded="true" />
+            <element signature="e#9992#10000#0" expanded="true" />
+            <element signature="e#10699#10707#0" expanded="true" />
+            <element signature="e#11236#11244#0" expanded="true" />
+            <element signature="e#11726#11734#0" expanded="true" />
+            <element signature="e#12291#12299#0" expanded="true" />
+            <element signature="e#12690#12698#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -594,10 +762,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SocialNetworkTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="440" column="15" selection-start-line="440" selection-start-column="15" selection-end-line="440" selection-end-column="15" />
+        <state>
+          <caret selection-end-line="19" selection-end-column="2" />
           <folding>
+            <element signature="e#0#16674#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#3456#3464#0" expanded="true" />
+            <element signature="e#4282#4290#0" expanded="true" />
+            <element signature="e#4687#4695#0" expanded="true" />
+            <element signature="e#5181#5189#0" expanded="true" />
+            <element signature="e#5825#5833#0" expanded="true" />
+            <element signature="e#6207#6215#0" expanded="true" />
+            <element signature="e#6629#6637#0" expanded="true" />
+            <element signature="e#7154#7162#0" expanded="true" />
+            <element signature="e#7637#7645#0" expanded="true" />
+            <element signature="e#8066#8074#0" expanded="true" />
+            <element signature="e#8676#8684#0" expanded="true" />
+            <element signature="e#9091#9099#0" expanded="true" />
+            <element signature="e#9526#9534#0" expanded="true" />
+            <element signature="e#9992#10000#0" expanded="true" />
+            <element signature="e#10699#10707#0" expanded="true" />
+            <element signature="e#11236#11244#0" expanded="true" />
+            <element signature="e#11726#11734#0" expanded="true" />
+            <element signature="e#12291#12299#0" expanded="true" />
+            <element signature="e#12690#12698#0" expanded="true" />
           </folding>
         </state>
       </provider>

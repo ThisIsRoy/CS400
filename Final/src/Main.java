@@ -1,30 +1,58 @@
+//
+// Title:           NBA Statistics
+// Files:           Requires: N/A
+// Course:          CS 400 Fall 19 2019
+//
+// Author:          Roy Sun
+// Email:           rsun65@wisc.edu
+// Lecturer's Name: Andrew Kuemmel
+//
+///////////////////////////// CREDIT OUTSIDE HELP /////////////////////////////
+//
+// Students who get help from sources other than their partner must fully
+// acknowledge and credit those sources of help here.  Instructors and TAs do
+// not need to be credited here, but tutors, friends, relatives, room mates,
+// strangers, and others do.  If you received no outside help from either type
+//  of source, then please explicitly indicate NONE.
+//
+// Persons:         NONE
+// Online Sources:  thenewboston Youtube
+//                  stackoverflow
+//                  oracle docs
+//                  geeksforgeeks
+//
+
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.event.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.Writer;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Main extends Application {
+    private Stage primaryStage;
+
     // gui elements
     private TextField nameInput;
     private TextField posInput;
@@ -55,96 +83,113 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        BorderPane root = new BorderPane();
-
-        // ------------------ TOP -----------------//
-        HBox title = getTop();
-
-        TextField filter = new TextField();
-        HBox filterBox = getFilter(filter);
-        VBox top = new VBox();
-        top.getChildren().addAll(title, filterBox);
-        root.setTop(top);
-
-
-        // ------------------ CENTER -----------------//
-        // table to display nba player data
-        table = getTable();
-
-        // filter logic
-        ObservableList<NBAPlayer> playerList = getPlayers();
-        FilteredList<NBAPlayer> filteredList = new FilteredList<NBAPlayer>(table.getItems(), a -> true);
-        filter.textProperty().addListener((arg, oldVal, newVal) -> {
-            table.setItems(filteredList);
-            filteredList.setPredicate(player -> {
-                // filter is empty
-                if (newVal == null || newVal.isEmpty()) {
-                    table.setItems(playerList);
-                    return true;
-                }
-
-                String filterVal = newVal.toLowerCase();
-
-                // name, team, or position contains filter text
-                return player.getName().toLowerCase().contains(filterVal) || player.getTeam().toLowerCase().contains(filterVal)
-                        || player.getPosition().toLowerCase().contains(filterVal);
-            });
-        });
-
-        VBox addBox = new VBox();
-        addBox.setAlignment(Pos.BASELINE_RIGHT);
-        addBox.getChildren().addAll(getAddPlayers(), getAddText());
-
-        // add everything to vbox
-        VBox center = new VBox();
-        center.getChildren().addAll(getDelPlayers(), table, getChangePlayers(), addBox);
-        root.setCenter(center);
-
-        // ------------------ BOTTOM -----------------//
-        HBox downloadPrompt = getDownloadPrompt();
-        HBox download = getDownload();
         HBox error = getError();
-        HBox fileCreated = getFileCreated();
-        VBox bottom = new VBox();
-        bottom.getChildren().addAll(downloadPrompt, download, error, fileCreated);
-        root.setBottom(bottom);
+        // catches all errors to display at bottom
+        try {
+            BorderPane root = new BorderPane();
 
-        // ------------------ STATISTICS -----------------//
-        BorderPane stats = new BorderPane();
-        PieChart positionChart = getPositionChart();
-        BarChart<String, Number> pointsChart = getBarChart("Player Points", "Points", 10, NBAPlayer::getPoints);
-        BarChart<String, Number> assistsChart = getBarChart("Player Assists", "Assists", 10, NBAPlayer::getAssists);
-        BarChart<String, Number> blocksChart = getBarChart("Player Blocks", "Blocks", 10, NBAPlayer::getBlocks);
-        stats.setTop(positionChart);
-        HBox barGraphs = new HBox();
-        barGraphs.getChildren().addAll(pointsChart, assistsChart, blocksChart);
-        stats.setCenter(barGraphs);
+            // ------------------ TOP -----------------//
+            HBox title = getTop();
 
-        // set up tabs
-        TabPane tabPane = new TabPane();
-        Tab homeTab = new Tab("Home");
-        homeTab.setContent(root);
-        Tab statsTab = new Tab("Stats");
-        statsTab.setContent(stats);
-        tabPane.getTabs().addAll(homeTab, statsTab);
-        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+            TextField filter = new TextField();
+            filter.setPrefWidth(400);
+            filter.setPrefHeight(40);
+            filter.setFont(Font.font("Calibri", FontWeight.THIN, 30));
+            HBox filterBox = getFilter(filter);
+            VBox top = new VBox();
+            top.getChildren().addAll(title, filterBox);
+            root.setTop(top);
 
-        // stage up stage
-        Scene scene = new Scene(tabPane, 1200, 800);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("NBA Player Statistics");
-        primaryStage.show();
+
+            // ------------------ CENTER -----------------//
+            // table to display nba player data
+            table = getTable();
+
+            // filter logic
+            ObservableList<NBAPlayer> playerList = getPlayers();
+            FilteredList<NBAPlayer> filteredList = new FilteredList<NBAPlayer>(table.getItems(), a -> true);
+            filter.textProperty().addListener((arg, oldVal, newVal) -> {
+                table.setItems(filteredList);
+                filteredList.setPredicate(player -> {
+                    // filter is empty
+                    if (newVal == null || newVal.isEmpty()) {
+                        table.setItems(playerList);
+                        return true;
+                    }
+
+                    String filterVal = newVal.toLowerCase();
+
+                    // name, team, or position contains filter text
+                    return player.getName().toLowerCase().contains(filterVal) || player.getTeam().toLowerCase().contains(filterVal)
+                            || player.getPosition().toLowerCase().contains(filterVal);
+                });
+            });
+
+            VBox addBox = new VBox();
+            addBox.setAlignment(Pos.BASELINE_RIGHT);
+            addBox.getChildren().addAll(getAddPlayers(), getAddText());
+
+            // add everything to vbox
+            VBox center = new VBox();
+            center.getChildren().addAll(getDelPlayers(), table, getChangePlayers(), addBox);
+            root.setCenter(center);
+
+            // ------------------ BOTTOM -----------------//
+            HBox downloadPrompt = getDownloadPrompt();
+            HBox download = getDownload();
+            HBox fileCreated = getFileCreated();
+            VBox bottom = new VBox();
+            bottom.getChildren().addAll(downloadPrompt, download, error, fileCreated);
+            root.setBottom(bottom);
+
+            // ------------------ STATISTICS -----------------//
+            BorderPane stats = new BorderPane();
+            PieChart positionChart = getPositionChart();
+            BarChart<String, Number> pointsChart = getBarChart("Player Points", "Points", 10, NBAPlayer::getPoints);
+            BarChart<String, Number> assistsChart = getBarChart("Player Assists", "Assists", 10, NBAPlayer::getAssists);
+            BarChart<String, Number> blocksChart = getBarChart("Player Blocks", "Blocks", 10, NBAPlayer::getBlocks);
+            stats.setTop(positionChart);
+            HBox barGraphs = new HBox();
+            barGraphs.getChildren().addAll(pointsChart, assistsChart, blocksChart);
+            stats.setCenter(barGraphs);
+
+            // set up tabs
+            TabPane tabPane = new TabPane();
+            Tab homeTab = new Tab("Home");
+            homeTab.setContent(root);
+            Tab statsTab = new Tab("Stats");
+            statsTab.setContent(stats);
+            tabPane.getTabs().addAll(homeTab, statsTab);
+            tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+
+            // stage up stage
+            Scene scene = new Scene(tabPane, 1600, 900);
+            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+            primaryStage.setScene(scene);
+            primaryStage.setTitle("NBA Player Statistics");
+            primaryStage.setOnCloseRequest(confirmClose);
+            primaryStage.show();
+            this.primaryStage = primaryStage;
+        } catch (Exception e) {
+            displayErrorMessage(e);
+        }
+
     }
 
     /**
-     * helper function for creating top of the gui
-     * @return hbox for top
+     * helper function for creating top of the gui     * @return hbox for top
      */
     private HBox getTop() {
         HBox top = new HBox(10);
         top.setAlignment(Pos.CENTER);
         Label titleLabel = new Label("NBA PLAYER STATISTICS");
-        top.getChildren().add(titleLabel);
+        titleLabel.setId("title-label");
+
+        try {
+            top.getChildren().addAll(titleLabel);
+        } catch (Exception e) {
+            displayErrorMessage(e);
+        }
 
         return top;
     }
@@ -170,6 +215,7 @@ public class Main extends Application {
         // set up button logic
         Button addButton = new Button("Add");
         addButton.setOnAction(e -> addButtonClick());
+        addButton.setId("add-button");
 
         // set up hbox
         HBox addPlayers = new HBox();
@@ -189,6 +235,7 @@ public class Main extends Application {
         // set up button logic
         Button delButton = new Button("Delete");
         delButton.setOnAction(e -> delButtonClick());
+        delButton.setId("del-button");
 
         // set up hbox
         HBox delPlayers = new HBox();
@@ -445,6 +492,7 @@ public class Main extends Application {
      */
     private TableView<NBAPlayer> getTable() {
         int minWidth = 70;
+        // set up table columns
         TableColumn<NBAPlayer, String> nameColumn = new TableColumn<NBAPlayer, String>("Name");
         nameColumn.setMinWidth(minWidth);
         nameColumn.setCellValueFactory(new PropertyValueFactory<NBAPlayer, String>("name"));
@@ -517,7 +565,9 @@ public class Main extends Application {
         HBox download = new HBox();
         download.setAlignment(Pos.CENTER);
         Button downloadButton = new Button("Download");
-        downloadButton.setOnAction(e -> createCSV());
+        downloadButton.setId("download-button");
+        downloadButton.setOnAction(e -> createCSV(downloadPrompt.getText(), fileCreatedText));
+        downloadPrompt.setText("");
         download.getChildren().add(downloadButton);
         return download;
     }
@@ -549,11 +599,13 @@ public class Main extends Application {
     }
 
     /**
-     * writes data to file
+     * helper function for creating csv file
+     * @param promptText textfield for file path
+     * @param fileCreated label for created message
      */
-    private void createCSV() {
+    private void createCSV(String promptText, Label fileCreated) {
         // check file path exists
-        if (downloadPrompt.getText().equals("") || downloadPrompt.getText().isEmpty()) {
+        if (promptText.equals("") || promptText.isEmpty()) {
             errorText.setText("Please enter a file name");
             return;
         }
@@ -562,7 +614,7 @@ public class Main extends Application {
         Writer writer = null;
 
         try {
-            File file = new File(downloadPrompt.getText() + ".csv");
+            File file = new File(promptText + ".csv");
             writer = new BufferedWriter(new FileWriter(file));
 
             for (NBAPlayer player : table.getItems()) {
@@ -577,8 +629,7 @@ public class Main extends Application {
                 writer.flush();
                 writer.close();
                 errorText.setText("");
-                fileCreatedText.setText("File " + downloadPrompt.getText() + ".csv created!");
-                downloadPrompt.setText("");
+                fileCreated.setText("File " + promptText + ".csv created!");
             } catch (Exception e) {
                 displayErrorMessage(e);
             }
@@ -633,6 +684,7 @@ public class Main extends Application {
             chartData[i] = new PieChart.Data(positions.get(i), data.get(positions.get(i)));
         }
 
+        // create pie chart
         PieChart pieChart = new PieChart(FXCollections.observableArrayList(chartData));
         pieChart.setTitle("Position Breakdown");
         return pieChart;
@@ -666,8 +718,75 @@ public class Main extends Application {
             data.getData().add(new XYChart.Data<String, Number>(player.getName(), getInt.getStat(player)));
         }
 
+        // create graph
         barChart.getData().add(data);
         barChart.setLegendVisible(false);
+        barChart.setPadding(new Insets(50));
         return barChart;
+    }
+
+    private EventHandler<WindowEvent> confirmClose = event -> {
+        // create alert
+        Alert closeConfirmation = new Alert(
+                Alert.AlertType.CONFIRMATION,
+                "Do you want to save your work first?"
+        );
+
+        Button saveButton = (Button) closeConfirmation.getDialogPane().lookupButton(
+                ButtonType.CANCEL
+        );
+
+        // button for save
+        saveButton.setOnAction(e -> saveAlert());
+        saveButton.setText("Save");
+        saveButton.setId("save-button");
+
+        //button to close
+        Button exitButton = (Button) closeConfirmation.getDialogPane().lookupButton(
+                ButtonType.OK
+        );
+        exitButton.setText("Exit");
+        closeConfirmation.setHeaderText("Confirm Close");
+        closeConfirmation.initModality(Modality.APPLICATION_MODAL);
+        closeConfirmation.initOwner(primaryStage);
+
+        Optional<ButtonType> close = closeConfirmation.showAndWait();
+        if (!ButtonType.OK.equals(close.get())) {
+            event.consume();
+        }
+    };
+
+    /**
+     * helper function for pop up window to prompt user for save
+     */
+    public void saveAlert() {
+        Stage saveStage = new Stage();
+        saveStage.initModality(Modality.APPLICATION_MODAL);
+        saveStage.setMinWidth(300);
+
+        // label and button to for save file path
+        Label saveMessage = new Label();
+        saveMessage.setText("Enter file path to save");
+
+        TextField saveField = new TextField();
+        saveField.setPromptText("File name");
+        saveField.setFocusTraversable(false);
+        saveField.addEventHandler(KeyEvent.ANY, e -> saveField.requestFocus());
+
+        Button closeButton = new Button("Save");
+        closeButton.setOnAction(e -> {
+            createCSV(saveField.getText(), saveMessage);
+            saveStage.close();
+            primaryStage.close();
+        });
+
+        // create stage
+        VBox saveBox = new VBox();
+        saveBox.getChildren().addAll(saveMessage, saveField, closeButton);
+        saveBox.setAlignment(Pos.CENTER);
+
+        Scene scene = new Scene(saveBox);
+        saveStage.setScene(scene);
+        saveStage.show();
     }
 }

@@ -1,5 +1,5 @@
 //
-// Title:           friend graph algorithms
+// Title:           NBA Statistics
 // Files:           Requires: N/A
 // Course:          CS 400 Fall 19 2019
 //
@@ -16,7 +16,10 @@
 //  of source, then please explicitly indicate NONE.
 //
 // Persons:         NONE
-// Online Sources:  NONE
+// Online Sources:  thenewboston Youtube
+//                  stackoverflow
+//                  oracle docs
+//                  geeksforgeeks
 //
 
 import static junit.framework.TestCase.assertTrue;
