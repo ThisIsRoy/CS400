@@ -15,34 +15,12 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="NBAPlayer.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/NBAPlayer.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="1079">
-                    <caret line="132" column="44" lean-forward="true" selection-start-line="131" selection-start-column="48" selection-end-line="132" selection-end-column="44" />
-                    <folding>
-                      <element signature="e#2608#2616#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="TreapTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TreapTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="994">
+            <state relative-caret-position="2924">
               <caret line="373" lean-forward="true" selection-start-line="373" selection-end-line="373" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -103,8 +81,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-67">
-              <caret line="546" column="47" selection-start-line="546" selection-start-column="47" selection-end-line="546" selection-end-column="47" />
+            <state relative-caret-position="170">
+              <caret line="142" column="27" lean-forward="true" selection-start-line="142" selection-start-column="27" selection-end-line="142" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1967#1978#0" expanded="true" />
@@ -124,8 +102,21 @@
                 <element signature="e#14284#14304#0" expanded="true" />
                 <element signature="e#14521#14541#0" expanded="true" />
                 <element signature="e#14745#14756#0" expanded="true" />
-                <marker date="1576456175318" expanded="true" signature="2970:3115" ph="..." />
+                <element signature="e#22514#22531#0" expanded="true" />
+                <element signature="e#23171#23179#0" expanded="true" />
+                <element signature="e#23972#23988#0" expanded="true" />
+                <element signature="e#24196#24212#0" expanded="true" />
+                <marker date="1576463369623" expanded="true" signature="3089:3234" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NBAPlayerInt.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NBAPlayerInt.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -137,6 +128,7 @@
       <list>
         <option value="Class" />
         <option value="JavaFXApplication" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -152,13 +144,14 @@
         <option value="$PROJECT_DIR$/src/NBAPlayerReader.java" />
         <option value="$PROJECT_DIR$/src/TreapTree.java" />
         <option value="$PROJECT_DIR$/src/NBAPlayer.java" />
+        <option value="$PROJECT_DIR$/src/NBAPlayerInt.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1128" />
-    <option name="width" value="1183" />
+    <option name="x" value="-7" />
+    <option name="width" value="2318" />
     <option name="height" value="1407" />
   </component>
   <component name="ProjectView">
@@ -322,7 +315,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1128" y="0" width="1183" height="1407" extended-state="0" />
+    <frame x="-7" y="0" width="2318" height="1407" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -333,12 +326,12 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.45665634" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.45665634" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2596401" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13162467" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -440,7 +433,11 @@
             <element signature="e#14284#14304#0" expanded="true" />
             <element signature="e#14521#14541#0" expanded="true" />
             <element signature="e#14745#14756#0" expanded="true" />
-            <marker date="1576456175318" expanded="true" signature="2970:3115" ph="..." />
+            <element signature="e#22514#22531#0" expanded="true" />
+            <element signature="e#23171#23179#0" expanded="true" />
+            <element signature="e#23972#23988#0" expanded="true" />
+            <element signature="e#24196#24212#0" expanded="true" />
+            <marker date="1576463369623" expanded="true" signature="3089:3234" ph="..." />
           </folding>
         </state>
       </provider>
@@ -513,7 +510,11 @@
             <element signature="e#14284#14304#0" expanded="true" />
             <element signature="e#14521#14541#0" expanded="true" />
             <element signature="e#14745#14756#0" expanded="true" />
-            <marker date="1576456175318" expanded="true" signature="2970:3115" ph="..." />
+            <element signature="e#22514#22531#0" expanded="true" />
+            <element signature="e#23171#23179#0" expanded="true" />
+            <element signature="e#23972#23988#0" expanded="true" />
+            <element signature="e#24196#24212#0" expanded="true" />
+            <marker date="1576463369623" expanded="true" signature="3089:3234" ph="..." />
           </folding>
         </state>
       </provider>
@@ -645,9 +646,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/NBAPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="103" column="5" lean-forward="true" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
+          <folding>
+            <element signature="e#2608#2616#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NBAPlayerInt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TreapTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="994">
+        <state relative-caret-position="2924">
           <caret line="373" lean-forward="true" selection-start-line="373" selection-end-line="373" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -680,20 +698,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NBAPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1079">
-          <caret line="132" column="44" lean-forward="true" selection-start-line="131" selection-start-column="48" selection-end-line="132" selection-end-column="44" />
-          <folding>
-            <element signature="e#2608#2616#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-67">
-          <caret line="546" column="47" selection-start-line="546" selection-start-column="47" selection-end-line="546" selection-end-column="47" />
+        <state relative-caret-position="170">
+          <caret line="142" column="27" lean-forward="true" selection-start-line="142" selection-start-column="27" selection-end-line="142" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1967#1978#0" expanded="true" />
@@ -713,7 +721,11 @@
             <element signature="e#14284#14304#0" expanded="true" />
             <element signature="e#14521#14541#0" expanded="true" />
             <element signature="e#14745#14756#0" expanded="true" />
-            <marker date="1576456175318" expanded="true" signature="2970:3115" ph="..." />
+            <element signature="e#22514#22531#0" expanded="true" />
+            <element signature="e#23171#23179#0" expanded="true" />
+            <element signature="e#23972#23988#0" expanded="true" />
+            <element signature="e#24196#24212#0" expanded="true" />
+            <marker date="1576463369623" expanded="true" signature="3089:3234" ph="..." />
           </folding>
         </state>
       </provider>

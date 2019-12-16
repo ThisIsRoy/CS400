@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.chart.*;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
@@ -18,7 +19,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main extends Application {
     // gui elements
@@ -105,8 +109,28 @@ public class Main extends Application {
         bottom.getChildren().addAll(downloadPrompt, download, error, fileCreated);
         root.setBottom(bottom);
 
-        // set up stage
-        Scene scene = new Scene(root, 1200, 800);
+        // ------------------ STATISTICS -----------------//
+        BorderPane stats = new BorderPane();
+        PieChart positionChart = getPositionChart();
+        BarChart<String, Number> pointsChart = getBarChart("Player Points", "Points", 10, NBAPlayer::getPoints);
+        BarChart<String, Number> assistsChart = getBarChart("Player Assists", "Assists", 10, NBAPlayer::getAssists);
+        BarChart<String, Number> blocksChart = getBarChart("Player Blocks", "Blocks", 10, NBAPlayer::getBlocks);
+        stats.setTop(positionChart);
+        HBox barGraphs = new HBox();
+        barGraphs.getChildren().addAll(pointsChart, assistsChart, blocksChart);
+        stats.setCenter(barGraphs);
+
+        // set up tabs
+        TabPane tabPane = new TabPane();
+        Tab homeTab = new Tab("Home");
+        homeTab.setContent(root);
+        Tab statsTab = new Tab("Stats");
+        statsTab.setContent(stats);
+        tabPane.getTabs().addAll(homeTab, statsTab);
+        tabPane.setTabClosingPolicy(TabPane.TabClosingPolicy.UNAVAILABLE);
+
+        // stage up stage
+        Scene scene = new Scene(tabPane, 1200, 800);
         primaryStage.setScene(scene);
         primaryStage.setTitle("NBA Player Statistics");
         primaryStage.show();
@@ -119,7 +143,7 @@ public class Main extends Application {
     private HBox getTop() {
         HBox top = new HBox(10);
         top.setAlignment(Pos.CENTER);
-        Label titleLabel = new Label("NBA Player Statistics");
+        Label titleLabel = new Label("NBA PLAYER STATISTICS");
         top.getChildren().add(titleLabel);
 
         return top;
@@ -507,7 +531,7 @@ public class Main extends Application {
         download.setAlignment(Pos.CENTER);
         downloadPrompt = new TextField();
         downloadPrompt.setPadding(new Insets(5, 10, 5, 10));
-        downloadPrompt.setPromptText("File path");
+        downloadPrompt.setPromptText("File name");
         download.getChildren().add(downloadPrompt);
         return download;
     }
@@ -530,7 +554,7 @@ public class Main extends Application {
     private void createCSV() {
         // check file path exists
         if (downloadPrompt.getText().equals("") || downloadPrompt.getText().isEmpty()) {
-            errorText.setText("Please enter a file path");
+            errorText.setText("Please enter a file name");
             return;
         }
 
@@ -573,8 +597,77 @@ public class Main extends Application {
         return fileCreated;
     }
 
+    /**
+     * helper function for displaying error message
+     * @param e exception
+     */
     private void displayErrorMessage(Exception e) {
         errorText.setText(e.getLocalizedMessage());
         fileCreatedText.setText("");
+    }
+
+    /**
+     * helper function for creating pie graph
+     * @return pie graph
+     */
+    private PieChart getPositionChart() {
+
+        String position;
+        HashMap<String, Integer> data = new HashMap<String, Integer>();
+
+        // extract position data
+        for (NBAPlayer player : table.getItems()) {
+            position = player.getPosition();
+            if (data.get(position) == null) {
+                data.put(position, 1);
+            } else {
+                data.put(position, data.get(position) + 1);
+            }
+        }
+
+        // add to pie chart
+        PieChart.Data chartData[] = new PieChart.Data[data.keySet().size()];
+        List<String> positions = new ArrayList<String>(data.keySet());
+
+        for (int i = 0; i < positions.size(); i++) {
+            chartData[i] = new PieChart.Data(positions.get(i), data.get(positions.get(i)));
+        }
+
+        PieChart pieChart = new PieChart(FXCollections.observableArrayList(chartData));
+        pieChart.setTitle("Position Breakdown");
+        return pieChart;
+    }
+
+    /**
+     * helper function for creating a bar chart for a NBA player statistic
+     * @param chartTitle chart title
+     * @param yValue y-axis value
+     * @param numPlayers number of players to display data
+     * @param getInt function for returning the statistic
+     * @return bar graph
+     */
+    private BarChart<String, Number> getBarChart(String chartTitle, String yValue, int numPlayers, NBAPlayerInt getInt) {
+        // initialize graph
+        CategoryAxis xAxis = new CategoryAxis();
+        NumberAxis yAxis = new NumberAxis();
+        BarChart<String, Number> barChart = new BarChart<String, Number>(xAxis, yAxis);
+        barChart.setTitle(chartTitle);
+        xAxis.setLabel("Top " + Integer.toString(numPlayers) + " Players");
+        yAxis.setLabel(yValue);
+
+        // add data
+        XYChart.Series<String, Number> data = new XYChart.Series<String, Number>();
+        List<NBAPlayer> players = table.getItems().stream().
+                sorted((x, y) -> getInt.getStat(y) - getInt.getStat(x)).
+                limit(numPlayers).
+                collect(Collectors.toList());
+
+        for (NBAPlayer player : players) {
+            data.getData().add(new XYChart.Data<String, Number>(player.getName(), getInt.getStat(player)));
+        }
+
+        barChart.getData().add(data);
+        barChart.setLegendVisible(false);
+        return barChart;
     }
 }
