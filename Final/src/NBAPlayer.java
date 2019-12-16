@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class NBAPlayer implements Comparable<NBAPlayer> {
     private String name;
     private String position;
@@ -111,5 +113,25 @@ public class NBAPlayer implements Comparable<NBAPlayer> {
 
     public int getPoints() {
         return points;
+    }
+
+    public ArrayList<String> getValues() {
+        ArrayList<String> values = new ArrayList<String>();
+        values.add(name);
+        values.add(position);
+        values.add(Integer.toString(age));
+        values.add(team);
+        values.add(Integer.toString(gamesPlayed));
+        values.add(Integer.toString(threePointGoals));
+        values.add(Integer.toString(twoPointGoals));
+        values.add(Integer.toString(freeThrowsMade));
+        values.add(Integer.toString(totalRebounds));
+        values.add(Integer.toString(assists));
+        values.add(Integer.toString(steals));
+        values.add(Integer.toString(blocks));
+        values.add(Integer.toString(turnovers));
+        values.add(Integer.toString(fouls));
+        values.add(Integer.toString(points));
+        return values;
     }
 }

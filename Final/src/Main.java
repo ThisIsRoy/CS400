@@ -4,14 +4,20 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.Writer;
 import java.util.List;
 
 public class Main extends Application {
@@ -34,6 +40,10 @@ public class Main extends Application {
     private TableView<NBAPlayer> table;
     private Button addButton;
     private Button delButton;
+    private Label addText;
+    private TextField downloadPrompt;
+    private Label errorText;
+    private Label fileCreatedText;
 
     public static void main(String[] args) {
         launch(args);
@@ -45,28 +55,55 @@ public class Main extends Application {
 
         // ------------------ TOP -----------------//
         HBox title = getTop();
-        HBox filter = getFilter();
+
+        TextField filter = new TextField();
+        HBox filterBox = getFilter(filter);
         VBox top = new VBox();
-        top.getChildren().addAll(title, filter);
+        top.getChildren().addAll(title, filterBox);
         root.setTop(top);
 
 
         // ------------------ CENTER -----------------//
-        // add and delete players
-        HBox changePlayers = getChangePlayers();
-        HBox addPlayers = getAddPlayers();
-        HBox delPlayers = getDelPlayers();
-
-        // table
+        // table to display nba player data
         table = getTable();
 
-        FilteredList<NBAPlayer> filteredList = new FilteredList<NBAPlayer>(table.getItems(), b -> true);
-        // filterField
+        // filter logic
+        ObservableList<NBAPlayer> playerList = getPlayers();
+        FilteredList<NBAPlayer> filteredList = new FilteredList<NBAPlayer>(table.getItems(), a -> true);
+        filter.textProperty().addListener((arg, oldVal, newVal) -> {
+            table.setItems(filteredList);
+            filteredList.setPredicate(player -> {
+                // filter is empty
+                if (newVal == null || newVal.isEmpty()) {
+                    table.setItems(playerList);
+                    return true;
+                }
+
+                String filterVal = newVal.toLowerCase();
+
+                // name, team, or position contains filter text
+                return player.getName().toLowerCase().contains(filterVal) || player.getTeam().toLowerCase().contains(filterVal)
+                        || player.getPosition().toLowerCase().contains(filterVal);
+            });
+        });
+
+        VBox addBox = new VBox();
+        addBox.setAlignment(Pos.BASELINE_RIGHT);
+        addBox.getChildren().addAll(getAddPlayers(), getAddText());
 
         // add everything to vbox
         VBox center = new VBox();
-        center.getChildren().addAll(delPlayers, table, changePlayers, addPlayers);
+        center.getChildren().addAll(getDelPlayers(), table, getChangePlayers(), addBox);
         root.setCenter(center);
+
+        // ------------------ BOTTOM -----------------//
+        HBox downloadPrompt = getDownloadPrompt();
+        HBox download = getDownload();
+        HBox error = getError();
+        HBox fileCreated = getFileCreated();
+        VBox bottom = new VBox();
+        bottom.getChildren().addAll(downloadPrompt, download, error, fileCreated);
+        root.setBottom(bottom);
 
         // set up stage
         Scene scene = new Scene(root, 1200, 800);
@@ -92,10 +129,9 @@ public class Main extends Application {
      * helper function for creating filter
      * @return hbox for filter
      */
-    private HBox getFilter() {
+    private HBox getFilter(TextField filter) {
         HBox filterBox = new HBox(10);
         filterBox.setAlignment(Pos.CENTER);
-        TextField filter = new TextField();
         filter.setPromptText("Filter");
         filter.setFocusTraversable(false);
         filterBox.getChildren().add(filter);
@@ -114,9 +150,9 @@ public class Main extends Application {
         // set up hbox
         HBox addPlayers = new HBox();
         addPlayers.getChildren().add(addButton);
-        addPlayers.setPadding(new Insets(10));
+        addPlayers.setPadding(new Insets(5));
         addPlayers.setSpacing(10);
-
+        addPlayers.setAlignment(Pos.CENTER_RIGHT);
 
         return addPlayers;
     }
@@ -146,6 +182,7 @@ public class Main extends Application {
     private void addButtonClick() {
         // require name, position and team to create player
         if (nameInput.getText().equals("") || posInput.getText().equals("") || teamInput.getText().equals("")) {
+            addText.setText("Player must have a name, team, and position");
             return;
         }
 
@@ -157,6 +194,7 @@ public class Main extends Application {
                 Integer.parseInt(0 + turnOversInput.getText()), Integer.parseInt(0 + foulsInput.getText()),
                 Integer.parseInt(0 + pointsInput.getText()));
         table.getItems().add(player);
+        addText.setText("Player " + nameInput.getText() + " added successfully!");
         nameInput.clear();
         posInput.clear();
         ageInput.clear();
@@ -192,8 +230,7 @@ public class Main extends Application {
      */
     private ObservableList<NBAPlayer> getPlayers() {
         TreapTree<NBAPlayer> playerTree = NBAPlayerReader.parseCSV();
-        List<NBAPlayer> players = playerTree.inOrderTraversal();
-        return FXCollections.observableArrayList(players);
+        return FXCollections.observableArrayList(playerTree.inOrderTraversal());
     }
 
     /**
@@ -435,5 +472,109 @@ public class Main extends Application {
         center.getColumns().addAll(nameColumn, posColumn, ageColumn, teamColumn, gamesColumn, threePtColumn, twoPtColumn,
                 freeThrowColumn, reboundColumn, assistColumn, stealColumn, blockColumn, turnOverColumn, foulColumn, pointColumn);
         return center;
+    }
+
+    /**
+     * helper function for creating text that shows after a player is added
+     * @return label with help text
+     */
+    private Label getAddText() {
+        addText = new Label();
+        addText.setPadding(new Insets(0, 10, 10, 10));
+        addText.setAlignment(Pos.CENTER_RIGHT);
+        return addText;
+    }
+
+    /**
+     * helper function for creating hbox with download button
+     * @return hbox with download button
+     */
+    private HBox getDownload() {
+        HBox download = new HBox();
+        download.setAlignment(Pos.CENTER);
+        Button downloadButton = new Button("Download");
+        downloadButton.setOnAction(e -> createCSV());
+        download.getChildren().add(downloadButton);
+        return download;
+    }
+
+    /**
+     * helper function for creating hbox with download prompt text field
+     * @return hbox with prompt text field
+     */
+    private HBox getDownloadPrompt() {
+        HBox download = new HBox();
+        download.setAlignment(Pos.CENTER);
+        downloadPrompt = new TextField();
+        downloadPrompt.setPadding(new Insets(5, 10, 5, 10));
+        downloadPrompt.setPromptText("File path");
+        download.getChildren().add(downloadPrompt);
+        return download;
+    }
+
+    /**
+     * helper function for creating hbox with error message
+     * @return hbox with error message
+     */
+    private HBox getError() {
+        HBox error = new HBox();
+        error.setAlignment(Pos.CENTER);
+        errorText = new Label();
+        error.getChildren().add(errorText);
+        return error;
+    }
+
+    /**
+     * writes data to file
+     */
+    private void createCSV() {
+        // check file path exists
+        if (downloadPrompt.getText().equals("") || downloadPrompt.getText().isEmpty()) {
+            errorText.setText("Please enter a file path");
+            return;
+        }
+
+        String playerCSV;
+        Writer writer = null;
+
+        try {
+            File file = new File(downloadPrompt.getText() + ".csv");
+            writer = new BufferedWriter(new FileWriter(file));
+
+            for (NBAPlayer player : table.getItems()) {
+                playerCSV = String.join(",", player.getValues());
+                writer.write(playerCSV);
+                ((BufferedWriter) writer).newLine();
+            }
+        } catch (Exception e) {
+            displayErrorMessage(e);
+        } finally {
+            try {
+                writer.flush();
+                writer.close();
+                errorText.setText("");
+                fileCreatedText.setText("File " + downloadPrompt.getText() + ".csv created!");
+                downloadPrompt.setText("");
+            } catch (Exception e) {
+                displayErrorMessage(e);
+            }
+        }
+    }
+
+    /**
+     * helper function for creating hbox with download success message
+     * @return hbox with download success message
+     */
+    private HBox getFileCreated() {
+        HBox fileCreated = new HBox();
+        fileCreated.setAlignment(Pos.CENTER);
+        fileCreatedText = new Label();
+        fileCreated.getChildren().add(fileCreatedText);
+        return fileCreated;
+    }
+
+    private void displayErrorMessage(Exception e) {
+        errorText.setText(e.getLocalizedMessage());
+        fileCreatedText.setText("");
     }
 }

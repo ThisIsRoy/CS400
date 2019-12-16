@@ -369,6 +369,5 @@ public class TreapTree<T extends Comparable<T>> {
 //        tree.printSideways();
 //        System.out.println(tree.validatePriority());
 //        System.out.println(tree.validateTree());
-        System.out.println(Integer.parseInt(""+0));
     }
 }
