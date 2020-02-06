@@ -1,0 +1,109 @@
+/* CLASSES */
+.button {
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-font-size: 30px;
+}
+
+.chart-bar {
+    .chart-bar {
+        -fx-bar-fill: #22bad9;
+        -fx-background-color: linear-gradient(derive(-fx-bar-fill,-30%), derive(-fx-bar-fill,-40%)),
+                                  linear-gradient(derive(-fx-bar-fill,80%), derive(-fx-bar-fill, 0%)),
+                                  linear-gradient(derive(-fx-bar-fill,30%), derive(-fx-bar-fill,-10%));
+        -fx-background-insets: 0,1,2;
+        -fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+    }
+}
+
+.hbox-group {
+    -fx-margin: 20px;
+}
+
+.label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+.chart-pie-label-line {
+    -fx-stroke: #8b4513;
+    -fx-fill: #8b4513;
+}
+
+.chart-pie-label {
+    -fx-fill: #8b4513;
+    -fx-font-size: 1em;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane
+{
+    -fx-tab-min-width:90px;
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+.tab-pane .tab
+{
+    -fx-background-color: #e6e6e6;
+
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: #3c3c3c;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #828282;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* ID*/
+#add-button {
+  -fx-border-radius: 4px;
+  -fx-background-color: #2ECC40;
+  -fx-border: none;
+  -fx-padding: 10px;
+  -fx-pref-width: 170px;
+  -fx-transition: all 0.5s;
+}
+
+#del-button {
+  -fx-border-radius: 4px;
+  -fx-background-color:#d35400;
+  -fx-border: none;
+  -fx-padding: 10px;
+  -fx-pref-width: 170px;
+  -fx-transition: all 0.5s;
+}
+
+#download-button {
+  -fx-border-radius: 4px;
+  -fx-background-color:#0074D9;
+  -fx-border: none;
+  -fx-padding: 10px;
+  -fx-pref-width: 170px;
+  -fx-transition: all 0.5s;
+}
+
+#save-button {
+  -fx-background-color: green;
+}
+
+#title-label {
+  -fx-font-size: 60px;
+  -fx-font-weight: 200;
+}
